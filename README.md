@@ -1,13 +1,13 @@
-# Códigos e Humor Ácido
+# Códigos e Acidez
 
-Welcome to the repository for the *Códigos e Humor Ácido* blog. This blog is built with [Jekyll](https://jekyllrb.com/) using the [Chirpy](https://chirpy.cotes.page/) theme. This README provides instructions on how to set up Jekyll and Chirpy, as well as information about the blog's content.
+Welcome to the repository for the *Códigos e Acidez* blog. This blog is built with [Jekyll](https://jekyllrb.com/) using the [Chirpy](https://chirpy.cotes.page/) theme. This README provides instructions on how to set up Jekyll and Chirpy, as well as information about the blog's content.
 
 ## Blog Topics
 
 The blog covers a range of topics including:
 - **Software Development**: Insights, tutorials, and discussions on programming, best practices, and emerging technologies.
 - **Career**: Advice and experiences related to career development, job searching, and professional growth in the tech industry.
-- **Humor**: Light-hearted content and humor related to technology and everyday life.
+- **Humor**: Humor and sarcasm related to technology and everyday life.
 
 ## Getting Started
 
