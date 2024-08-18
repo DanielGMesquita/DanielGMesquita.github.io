@@ -1,5 +1,8 @@
-# Abstração em Programação: O Que É e Como Funciona?
-
+---
+layout: post
+title: Papos abstratos
+date: 2024-08-18 20:43 -0300
+---
 Abstração é um termo bastante comum quando falamos de programação. Mas, o que exatamente isso significa? Pintura?
 
 Para entender melhor, vamos explorar o conceito dentro do contexto da Programação Orientada a Objetos (POO), que utiliza classes e objetos.
