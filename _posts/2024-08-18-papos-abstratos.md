@@ -2,6 +2,8 @@
 layout: post
 title: Papos abstratos
 date: 2024-08-18 20:43 -0300
+categories: [Programação, Orientação a objetos]
+tags: [programação, poo, abstração]     # TAG names should always be lowercase
 ---
 Abstração é um termo bastante comum quando falamos de programação. Mas, o que exatamente isso significa? Pintura?
 
