@@ -3,7 +3,7 @@ layout: post
 title: Minhas impressões sobre ingressar na área de TI - Parte I
 date: 2024-08-19 15:45 -0300
 categories: [Carreira, Programação]
-tags: [carreira, programção, juninho]  
+tags: [carreira, programação, juninho]  
 ---
 Algumas pessoas já vieram conversar comigo sobre iniciar em TI e transição de carreira. Muito pela experiência que tive fazendo uma mudança de carreira há alguns anos atrás.
 
