@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Minhas impressões sobre ingressar na área de TI - Parte I
+title: Minhas impressões sobre ingressar na área de TI - Parte II
 date: 2024-08-20 02:30 -0300
 categories: [Carreira, Programação]
 tags: [carreira, programação, juninho]  
