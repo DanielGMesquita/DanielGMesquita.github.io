@@ -71,7 +71,7 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 
 Agora vamos ao que interessa que é preparar seu banco de dados para ser utilizado. Abrindo o pgAdmin desktop, você clica com o botão direito em Server e vai Register -> Server...
 
-![Primeiro passo pgAdmin](assets/img/posts/databases/step_01_pgAdmin.png)
+![Primeiro passo pgAdmin](assets/img/posts/step_01_pgAdmin.png)
 
 Aí você vai dar de cara com General Tab, um menu que pede o name do server, aqui é livre, vamos supor "PostgreSQL Server" e depois você vai em Connection Tabe, coloa no host name `localhost`, uma vez que você vai rodar local neste caso, a porta padrão do postgres é `5432` e geralmente já vem por default, o usuário `postgres` que configuramos antes e a senha que você escolheu. Vai de Save e seu novo Server vai estar lá.
 
