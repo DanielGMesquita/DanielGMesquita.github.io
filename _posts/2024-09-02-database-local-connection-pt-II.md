@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Conectando bancos de dados locais - Parte II
-date: 2024-09-02 05:10 -0300
+date: 2024-09-02 06:10 -0300
 categories: [Programação, Banco de dados]
 tags: [programação, postgres, banco de dados, sql]  
 ---
