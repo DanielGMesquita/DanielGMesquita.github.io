@@ -313,6 +313,7 @@ Esse é um exemplo de um CRUD simples utilizando um banco SQL configurado utiliz
 Em breve eu vou trazer aqui a configuração do MongoDB que é um banco NoSQL e como utilizar o Java para manipular os dados.
 
 Abraços!
+
 ___
 
 *JDBC (Java Database Connectivity) é uma API (Application Programming Interface) do Java que permite que aplicativos Java se conectem a bancos de dados, enviem consultas SQL e manipulem dados armazenados neles. Basicamente, o JDBC atua como uma ponte entre o código Java e o banco de dados, permitindo que você execute operações como inserir, atualizar, excluir e consultar dados.
