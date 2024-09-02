@@ -1,0 +1,169 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://danielmesquita.dev.br/</id>
+  <title>Código e Acidez</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2024-09-02T06:49:10-03:00</updated>
+  <author>
+    <name>Daniel Mesquita</name>
+    <uri>https://danielmesquita.dev.br/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://danielmesquita.dev.br/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="pt-BR"
+    href="https://danielmesquita.dev.br/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2024 Daniel Mesquita </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Conectando bancos de dados locais - Parte II</title>
+    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-II/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte II" />
+    <published>2024-09-02T06:10:00-03:00</published>
+  
+    <updated>2024-09-02T06:47:20-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-II/</id>
+    <content src="https://danielmesquita.dev.br/posts/database-local-connection-pt-II/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Programação" />
+    
+    <category term="Banco de dados" />
+    
+  
+
+  <summary>Agora que já foi possível conectar o banco postegres usando o JDBC*, podemos seguir em frente e criar os métodos que vão interagir com o banco de dados. Caso não tenha visto a primeira parte, é fundamental que veja.
+
+Primeiro, precisamos alimentar as tabelas com algum dado. Isso não vai ser feito via mágica, vamos usar queries SQL mesmo. Na parte I, criamos a tabela product. Agora vamos criar u...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Conectando bancos de dados locais - Parte I</title>
+    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-I/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte I" />
+    <published>2024-09-01T08:10:00-03:00</published>
+  
+    <updated>2024-09-01T10:29:16-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-I/</id>
+    <content src="https://danielmesquita.dev.br/posts/database-local-connection-pt-I/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Programação" />
+    
+    <category term="Banco de dados" />
+    
+  
+
+  <summary>Uma coisa que todo programador ou estudante back-end precisa ter para fazer qualquer coisa útil, é um banco de dados rodando. Afinal de contas, tudo é CRUD (polêmico) e não se faz um sem um banco de dados.
+
+Uma coisa importante é que existem alguns passos a se configurar um banco de dados local na sua máquina para poder rodar sua aplicação e manusear dados.
+
+Eu não vou me aprofundar aqui sobre ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Faça seu próprio código</title>
+    <link href="https://danielmesquita.dev.br/posts/make-your-own-code/" rel="alternate" type="text/html" title="Faça seu próprio código" />
+    <published>2024-08-26T00:10:00-03:00</published>
+  
+    <updated>2024-08-26T00:10:00-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/make-your-own-code/</id>
+    <content src="https://danielmesquita.dev.br/posts/make-your-own-code/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Programação" />
+    
+    <category term="Estudos" />
+    
+  
+
+  <summary>No começo dos meus estudos em programação, eu fui um dos vários casos que acompanhou cursos onde o instrutor vai escrevendo o código e ensinando as coisas enquanto o aluno vai replicando.
+
+Eu acho que esse tipo de metodologia tem seu valor, mas depende muito do aluno.
+
+Passei quase um ano sem acessar nenhum material e estudar nesse formato. Atualmente estou em uma disciplina na faculdade que o ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Minhas impressões sobre ingressar na área de TI - Parte III</title>
+    <link href="https://danielmesquita.dev.br/posts/start-in-IT-pt-III-copy/" rel="alternate" type="text/html" title="Minhas impressões sobre ingressar na área de TI - Parte III" />
+    <published>2024-08-22T09:10:00-03:00</published>
+  
+    <updated>2024-08-22T09:10:00-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/start-in-IT-pt-III-copy/</id>
+    <content src="https://danielmesquita.dev.br/posts/start-in-IT-pt-III-copy/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Carreira" />
+    
+    <category term="Programação" />
+    
+  
+
+  <summary>Nas últimas postagens, abordei sobre aspectos técnicos e comportamentais que, baseados na minha experiência, achei legal compartilhar para as pessoas interessadas em ingressar na área de TI.
+
+Faltou um ponto importante que merece uma abordagem a parte, o inglês.
+
+Hoje em dia com as IAs generativas, tem muita gente abandonando literatura e documentação. O que é um equívoco, pois os materiais téc...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Minhas impressões sobre ingressar na área de TI - Parte II</title>
+    <link href="https://danielmesquita.dev.br/posts/start-in-IT-pt-II/" rel="alternate" type="text/html" title="Minhas impressões sobre ingressar na área de TI - Parte II" />
+    <published>2024-08-20T02:10:00-03:00</published>
+  
+    <updated>2024-08-20T02:37:38-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/start-in-IT-pt-II/</id>
+    <content src="https://danielmesquita.dev.br/posts/start-in-IT-pt-II/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Carreira" />
+    
+    <category term="Programação" />
+    
+  
+
+  <summary>Eu não sou especialista em nada, tudo o que eu falo é baseado na minha experiência, não quero ser influencer nem monetizar isso. Vou tentar condensar um pouco o meu caminho pra conseguir iniciar em TI sem me ater muito a sacrifícios pessoais, porque isso cada um vai viver os seus.
+
+Acredito que a primeira coisa é pesquisar sobre carreiras em TI, back, front, devops, cybersec, dados etc e entend...</summary>
+
+  </entry>
+
+</feed>
+
+
