@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Minhas impressões sobre ingressar na área de TI - Parte III" />
+<meta property="og:title" content="Conectando bancos de dados locais - Parte III" />
 <meta property="og:locale" content="pt_BR" />
-<meta name="description" content="Nas últimas postagens, abordei sobre aspectos técnicos e comportamentais que, baseados na minha experiência, achei legal compartilhar para as pessoas interessadas em ingressar na área de TI." />
-<meta property="og:description" content="Nas últimas postagens, abordei sobre aspectos técnicos e comportamentais que, baseados na minha experiência, achei legal compartilhar para as pessoas interessadas em ingressar na área de TI." />
-<link rel="canonical" href="http://localhost:4000/posts/start-in-IT-pt-III-copy/" />
-<meta property="og:url" content="http://localhost:4000/posts/start-in-IT-pt-III-copy/" />
+<meta name="description" content="Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: primeira parte e segunda parte, se for do seu interesse." />
+<meta property="og:description" content="Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: primeira parte e segunda parte, se for do seu interesse." />
+<link rel="canonical" href="http://localhost:4000/posts/database-local-connection-pt-III/" />
+<meta property="og:url" content="http://localhost:4000/posts/database-local-connection-pt-III/" />
 <meta property="og:site_name" content="Código e Acidez" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-22T09:10:00-03:00" />
+<meta property="article:published_time" content="2024-09-04T23:00:00-03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Minhas impressões sobre ingressar na área de TI - Parte III" />
+<meta property="twitter:title" content="Conectando bancos de dados locais - Parte III" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-22T09:10:00-03:00","datePublished":"2024-08-22T09:10:00-03:00","description":"Nas últimas postagens, abordei sobre aspectos técnicos e comportamentais que, baseados na minha experiência, achei legal compartilhar para as pessoas interessadas em ingressar na área de TI.","headline":"Minhas impressões sobre ingressar na área de TI - Parte III","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/start-in-IT-pt-III-copy/"},"url":"http://localhost:4000/posts/start-in-IT-pt-III-copy/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-04T23:00:00-03:00","datePublished":"2024-09-04T23:00:00-03:00","description":"Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: primeira parte e segunda parte, se for do seu interesse.","headline":"Conectando bancos de dados locais - Parte III","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/database-local-connection-pt-III/"},"url":"http://localhost:4000/posts/database-local-connection-pt-III/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Minhas impressões sobre ingressar na área de TI - Parte III | Código e Acidez
+  <title>Conectando bancos de dados locais - Parte III | Código e Acidez
   </title>
 
   <!--
@@ -413,7 +413,7 @@
         
           
             
-              <span>Minhas impressões sobre ingressar na área de TI - Parte III</span>
+              <span>Conectando bancos de dados locais - Parte III</span>
             
 
           
@@ -481,6 +481,142 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -522,7 +658,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Minhas impressões sobre ingressar na área de TI - Parte III</h1>
+    <h1 data-toc-skip>Conectando bancos de dados locais - Parte III</h1>
     
 
     <div class="post-meta text-muted">
@@ -539,13 +675,13 @@
 
 <time
   
-  data-ts="1724328600"
+  data-ts="1725501600"
   data-df="DD/MM/YYYY"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  22/08/2024
+  04/09/2024
 </time>
 
       </span>
@@ -594,9 +730,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="490 palavras"
+  title="964 palavras"
 >
-  <em>2 min</em> de leitura</span>
+  <em>5 min</em> de leitura</span>
 
         </div>
       </div>
@@ -604,27 +740,330 @@
   </header>
 
   <div class="content">
-    <p>Nas últimas postagens, abordei sobre aspectos técnicos e comportamentais que, baseados na minha experiência, achei legal compartilhar para as pessoas interessadas em ingressar na área de TI.</p>
+    <p>Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: <a href="https://danielmesquita.dev.br/posts/database-local-connection-pt-I/">primeira parte</a> e <a href="https://danielmesquita.dev.br/posts/database-local-connection-pt-II/">segunda parte</a>, se for do seu interesse.</p>
 
-<p>Faltou um ponto importante que merece uma abordagem a parte, o inglês.</p>
+<p>Hoje vou falar de como configurar um banco NoSQL localmente, para isso vou utilizar o MongoDB Community Edition. Eu ia colocar no post como instalar, mas lendo a documentação, acho que ela está bem auto-explicativa. Inclusive enfrentei problemas pra instalar no Ubuntu e resolvi usando a própria documentação. Seguem abaixo os links:</p>
 
-<p>Hoje em dia com as IAs generativas, tem muita gente abandonando literatura e documentação. O que é um equívoco, pois os materiais técnicos não correm risco de alucinar e não concordam com você quando você tá errado.</p>
+<p><a href="https://www.mongodb.com/try/download/community">Link para baixar</a></p>
 
-<p>Muitos materiais de qualidade estão em inglês. E infelizmente, a maioria dos materiais pioneiros ainda são produzidos lá fora primeiro. A maioria das empresas que você vai trabalhar, mesmo as brasileiras, por padrão utilizam o inglês para escrever códigos, funções, nomes de variáveis, documentação etc. Então é de suma importância ter conhecimento sobre o idioma pra poder se inserir mais rápido em qualquer contexto.</p>
+<p><a href="https://www.mongodb.com/docs/manual/administration/install-on-linux/">Instalaçao no Linux</a>
+<a href="https://www.mongodb.com/docs/manual/reference/installation-ubuntu-community-troubleshooting/">Troubleshoot Ubuntu Installation</a>.</p>
 
-<p>E um outro ponto importante é que saber inglês abre novos portais na sua vida pessoa e profissional.</p>
+<p><a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/">Instalação no Windows</a></p>
 
-<p>Recentemente eu iniciei minha carreira em uma empresa do exterior trabalhando remoto do Brasil. Eu nunca fiz curso de inglês ou intercâmbio porque quando era novo minha mãe tinha mal dinheiro pra pagar minha escola e depois de velho, difícil você tirar 6 meses sabáticos pra intercâmbio quando tem contas a pagar. Então aprendi como qualquer jovem sem recurso: fiz o que dava. Aprendi na curiosidade de entender os jogos, me expuso voluntariamente a leituras em inglês, assistindo filmes e séries legendadas, aos poucos tirando as legendas. Isso tudo me ajudou muito na leitura, escrita e compreensão.</p>
+<p><a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/">Instalação no Mac</a></p>
 
-<p>Mas a conversação é um caso a parte. Eu tinha total condições de compreender qualquer coisa dita a mim. Mas tinha uma grande insegurança ao falar. Me juntei a alguns grupos de discussões de negócios em redes sociais há uns anos atrás pra poder trocar ideia sobre vários assuntos “business” e poder destravar. Mesmo assim, não me sentia “fluente” ao ponto de fazer uma entrevista. Mas foi ao fazer minha primeira entrevista em inglês que vi que eu sabia mais do que imaginava. Conseguir fazer uma entrevista técnica com live coding, tudo em inglês foi algo que quebrou as minhas resistências.</p>
+<p>Depois, é importante instalar o <a href="https://www.mongodb.com/try/download/compass">Mongo Compass</a>, que fornece uma GUI para manusear as coleções na sua máquina. Ele tem essa carinha aqui:
+<a href="/assets/img/posts/mongo_compass.png" class="popup img-link  shimmer"><img src="/assets/img/posts/mongo_compass.png" alt="Mongo Compass" loading="lazy"></a></p>
 
-<p>Acredito que muitas pessoas passam pelo mesmo problema: a falta de confiança. E a melhor maneira é se expor. E gringo julga menos sotaque e pronúncia do que brasileiro. Não leve em consideração se você já fez algum processo seletivo no BR e julgaram você mal pelo seu sotaque ou algo do tipo, a galera aqui é chata pra caralho com isso. Querem só nível 10 na escala Geller do meu amigo <a href="https://www.linkedin.com/in/leonardomarconi/">Leonardo Marconi</a>.</p>
+<p>O banco NoSQL é um pouco mais amigável que um SQL pra você lidar com ele. Se você acessar um postgres ou um dbeaver da vida, é bem mais complexo, porque tem uma série de relações e particularidades do SQL que o NoSQL não tem.</p>
 
-<p>Portanto, se exponha, fale inglês com estrangeiros, vai aprendendo, errando, melhorando, estudando. Não esqueça da leitura, você constrói um vocabulário melhor quanto mais você lê. Não adianta falar bem se só sabe falar bosta.</p>
+<p>Ele vem por padrão na porta 27017. Só mude se fizer questão. Uma vez conectado, ele vem assim:
+<a href="/assets/img/posts/mongo_compass_connected.png" class="popup img-link  shimmer"><img src="/assets/img/posts/mongo_compass_connected.png" alt="Mongo Compass conectado" loading="lazy"></a></p>
 
-<p>Se alguém estiver lendo isso e quiser dar alguma sugestão sobre assuntos pra quem quer entrar em TI, só entrar em contato.</p>
+<p>Aqui você pode criar seus bancos de dados e coleções que pode necessitar na sua aplicação. Mas não vamos criar schemas ou objetos por aqui. Vamos fazer via aplicação Java.</p>
 
-<p>Espero ter ajudado!</p>
+<p>Primeiro, no pom.xml você vai precisar das seguintes dependências:</p>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre>    <span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.mongodb<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>mongodb-driver-sync<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>5.1.1<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>javax.validation<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>validation-api<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>2.0.1.Final<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>slf4j-api<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>2.0.9<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>slf4j-simple<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>2.0.9<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>Depois, assim como para o postgres, precisamos de um arquivo .properties para definir algumas propriedades do banco de dados:</p>
+<div class="language-properties highlighter-rouge"><div class="code-header">
+        <span data-label-text="Properties"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="py">mongodb.uri</span><span class="p">=</span><span class="s">mongodb://localhost:27017</span>
+<span class="py">mongodb.database</span><span class="p">=</span><span class="s">delivery-manager</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>Com isso no ponto importante mandar um <code class="language-plaintext highlighter-rouge">mvn clean install</code> pra instalar as dependências e podermos seguir.</p>
+
+<p>Agora vamos montar a conexão com o banco. Vamos seguir um padrão semelhante da configuração do postgres, criando uma classe específica para gerenciar a conexão com o MongoDB.</p>
+
+<p>No código abaixo eu utilizo o API do MongoDB para o Java (<code class="language-plaintext highlighter-rouge">mongo-java-driver</code>) carregando as configurações do banco a partir do arquivo db.properties.</p>
+
+<p>Eu declaro um atributo estático MongoClient que é uma interface da API do MongoDB para conectar com o banco de dados.</p>
+
+<p>Depois crio o método <code class="language-plaintext highlighter-rouge">getConnection()</code>, responsável por retornar uma conexão ativa com o Mongo. Primeiro ele carrega as definições do banco do arquivo db.properties chamando o método <code class="language-plaintext highlighter-rouge">loadProperties()</code>. Depois ele verifica se mongoClient é <code class="language-plaintext highlighter-rouge">null</code>, ou seja, se tem alguma conexão ativa com o banco de dados, se não tiver, ele abre uma nova conexão utilizando o uri do banco local. Por último, ele obtém o nome do banco a partir das properties e retorna a instância de <code class="language-plaintext highlighter-rouge">MongoDatabase</code> correspondente ao nosso banco.</p>
+
+<p>Além disso crio o método <code class="language-plaintext highlighter-rouge">closeConnection()</code>, necessário para encerrar a conexão com o banco.</p>
+
+<p>E também o método <code class="language-plaintext highlighter-rouge">loadProperties()</code>, que carrega as informações do arquivo <code class="language-plaintext highlighter-rouge">db.properties</code>.</p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">com.mongodb.client.MongoClient</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mongodb.client.MongoClients</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mongodb.client.MongoDatabase</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Properties</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DB</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="nc">MongoClient</span> <span class="n">mongoClient</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="nc">MongoDatabase</span> <span class="nf">getConnection</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="n">loadProperties</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mongoClient</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="nc">String</span> <span class="n">uri</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"mongodb.uri"</span><span class="o">);</span>
+      <span class="n">mongoClient</span> <span class="o">=</span> <span class="nc">MongoClients</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">uri</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nc">String</span> <span class="n">databaseName</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"mongodb.database"</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">mongoClient</span><span class="o">.</span><span class="na">getDatabase</span><span class="o">(</span><span class="n">databaseName</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">closeConnection</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mongoClient</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">mongoClient</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="nc">Properties</span> <span class="nf">loadProperties</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">(</span><span class="nc">FileInputStream</span> <span class="n">fs</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="s">"src/main/resources/db.properties"</span><span class="o">))</span> <span class="o">{</span>
+      <span class="nc">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Properties</span><span class="o">();</span>
+      <span class="n">props</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">fs</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">props</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">DbException</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>A parte de configuração do MongoDB é relativamente mais fácil que a do PostgreSQL.</p>
+
+<p>Depois, vamos criar a nossa entidade <code class="language-plaintext highlighter-rouge">Product</code> com o schema que vai ser utilizado na collection.</p>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">javax.validation.constraints.NotNull</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.validation.constraints.Size</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Product</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="nc">String</span> <span class="n">id</span><span class="o">;</span>
+
+  <span class="nd">@NotNull</span><span class="o">(</span><span class="n">message</span> <span class="o">=</span> <span class="s">"Product name is required"</span><span class="o">)</span>
+  <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+  <span class="nd">@NotNull</span><span class="o">(</span><span class="n">message</span> <span class="o">=</span> <span class="s">"Product price is required"</span><span class="o">)</span>
+  <span class="kd">private</span> <span class="nc">Double</span> <span class="n">price</span><span class="o">;</span>
+
+  <span class="nd">@NotNull</span><span class="o">(</span><span class="n">message</span> <span class="o">=</span> <span class="s">"Product description is required"</span><span class="o">)</span>
+  <span class="nd">@Size</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="mi">10</span><span class="o">,</span> <span class="n">message</span> <span class="o">=</span> <span class="s">"Product description requires 10 characters at least"</span><span class="o">)</span>
+  <span class="kd">private</span> <span class="nc">String</span> <span class="n">description</span><span class="o">;</span>
+
+  <span class="kd">private</span> <span class="nc">String</span> <span class="n">imageUri</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Product</span><span class="o">()</span> <span class="o">{}</span>
+
+  <span class="kd">public</span> <span class="nf">Product</span><span class="o">(</span><span class="nc">String</span> <span class="n">id</span><span class="o">,</span> <span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="nc">Double</span> <span class="n">price</span><span class="o">,</span> <span class="nc">String</span> <span class="n">description</span><span class="o">,</span> <span class="nc">String</span> <span class="n">imageUri</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">description</span> <span class="o">=</span> <span class="n">description</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">imageUri</span> <span class="o">=</span> <span class="n">imageUri</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="nc">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="nc">Double</span> <span class="nf">getPrice</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">price</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPrice</span><span class="o">(</span><span class="nc">Double</span> <span class="n">price</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getDescription</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">description</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDescription</span><span class="o">(</span><span class="nc">String</span> <span class="n">description</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">description</span> <span class="o">=</span> <span class="n">description</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getImageUri</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">imageUri</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setImageUri</span><span class="o">(</span><span class="nc">String</span> <span class="n">imageUri</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">imageUri</span> <span class="o">=</span> <span class="n">imageUri</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">validateId</span><span class="o">(</span><span class="nc">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">id</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">id</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Eu incluí o método validateId caso precise verificar se aquele id daquele objeto é válido para inserir no banco só por precaução.</p>
+
+<p>Bom, o tempo foi corrido, já finalizei o código todo, mas ainda não tive tempo de produzir uma explicação adequada. Vou encerrar essa postagem por aqui para que possa dar tempo de ver a instalação e caso tenha alguma dúvida, só me procurar.</p>
 
 <p>Abraço!</p>
 
@@ -636,8 +1075,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/carreira/">Carreira</a>,
-          <a href="/categories/programa%C3%A7%C3%A3o/">Programação</a>
+          <a href="/categories/programa%C3%A7%C3%A3o/">Programação</a>,
+          <a href="/categories/banco-de-dados/">Banco de dados</a>
       </div>
     
 
@@ -647,24 +1086,24 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/carreira/"
-            class="post-tag no-text-decoration"
-          >carreira</a>
-        
-          <a
             href="/tags/programa%C3%A7%C3%A3o/"
             class="post-tag no-text-decoration"
           >programação</a>
         
           <a
-            href="/tags/juninho/"
+            href="/tags/mongodb/"
             class="post-tag no-text-decoration"
-          >juninho</a>
+          >mongodb</a>
         
           <a
-            href="/tags/ingl%C3%AAs/"
+            href="/tags/banco-de-dados/"
             class="post-tag no-text-decoration"
-          >inglês</a>
+          >banco de dados</a>
+        
+          <a
+            href="/tags/nosql/"
+            class="post-tag no-text-decoration"
+          >nosql</a>
         
       </div>
     
@@ -700,28 +1139,28 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Minhas%20impress%C3%B5es%20sobre%20ingressar%20na%20%C3%A1rea%20de%20TI%20-%20Parte%20III%20-%20C%C3%B3digo%20e%20Acidez&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fstart-in-IT-pt-III-copy%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Conectando%20bancos%20de%20dados%20locais%20-%20Parte%20III%20-%20C%C3%B3digo%20e%20Acidez&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdatabase-local-connection-pt-III%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Minhas%20impress%C3%B5es%20sobre%20ingressar%20na%20%C3%A1rea%20de%20TI%20-%20Parte%20III%20-%20C%C3%B3digo%20e%20Acidez&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fstart-in-IT-pt-III-copy%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Conectando%20bancos%20de%20dados%20locais%20-%20Parte%20III%20-%20C%C3%B3digo%20e%20Acidez&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdatabase-local-connection-pt-III%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fstart-in-IT-pt-III-copy%2F&text=Minhas%20impress%C3%B5es%20sobre%20ingressar%20na%20%C3%A1rea%20de%20TI%20-%20Parte%20III%20-%20C%C3%B3digo%20e%20Acidez" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdatabase-local-connection-pt-III%2F&text=Conectando%20bancos%20de%20dados%20locais%20-%20Parte%20III%20-%20C%C3%B3digo%20e%20Acidez" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fstart-in-IT-pt-III-copy%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdatabase-local-connection-pt-III%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
         <i class="fa-fw fab fa-linkedin"></i>
       </a>
     
@@ -1519,7 +1958,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/start-in-IT-pt-II/" class="post-preview card h-100">
+          <a href="/posts/database-local-connection-pt-II/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1531,23 +1970,23 @@
 
 <time
   
-  data-ts="1724130600"
+  data-ts="1725268200"
   data-df="DD/MM/YYYY"
   
 >
-  20/08/2024
+  02/09/2024
 </time>
 
-              <h4 class="pt-0 my-2">Minhas impressões sobre ingressar na área de TI - Parte II</h4>
+              <h4 class="pt-0 my-2">Conectando bancos de dados locais - Parte II</h4>
               <div class="text-muted">
-                <p>Eu não sou especialista em nada, tudo o que eu falo é baseado na minha experiência, não quero ser influencer nem monetizar isso. Vou tentar condensar um pouco o meu caminho pra conseguir iniciar em...</p>
+                <p>Agora que já foi possível conectar o banco postegres usando o JDBC*, podemos seguir em frente e criar os métodos que vão interagir com o banco de dados. Caso não tenha visto a primeira parte, é fun...</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/posts/start-in-IT-pt-I/" class="post-preview card h-100">
+          <a href="/posts/database-local-connection-pt-I/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1559,25 +1998,23 @@
 
 <time
   
-  data-ts="1724093100"
+  data-ts="1725189000"
   data-df="DD/MM/YYYY"
   
 >
-  19/08/2024
+  01/09/2024
 </time>
 
-              <h4 class="pt-0 my-2">Minhas impressões sobre ingressar na área de TI - Parte I</h4>
+              <h4 class="pt-0 my-2">Conectando bancos de dados locais - Parte I</h4>
               <div class="text-muted">
-                <p>Algumas pessoas já vieram conversar comigo sobre iniciar em TI e transição de carreira. Muito pela experiência que tive fazendo uma mudança de carreira há alguns anos atrás.
-
-Tem algumas perguntas ...</p>
+                <p>Uma coisa que todo programador ou estudante back-end precisa ter para fazer qualquer coisa útil, é um banco de dados rodando. Afinal de contas, tudo é CRUD (polêmico) e não se faz um sem um banco d...</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/posts/database-local-connection-pt-III/" class="post-preview card h-100">
+          <a href="/posts/make-your-own-code/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1589,18 +2026,18 @@ Tem algumas perguntas ...</p>
 
 <time
   
-  data-ts="1725501600"
+  data-ts="1724641800"
   data-df="DD/MM/YYYY"
   
 >
-  04/09/2024
+  26/08/2024
 </time>
 
-              <h4 class="pt-0 my-2">Conectando bancos de dados locais - Parte III</h4>
+              <h4 class="pt-0 my-2">Faça seu próprio código</h4>
               <div class="text-muted">
-                <p>Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: primeira parte e segunda parte, se for do seu interesse.
+                <p>No começo dos meus estudos em programação, eu fui um dos vários casos que acompanhou cursos onde o instrutor vai escrevendo o código e ensinando as coisas enquanto o aluno vai replicando.
 
-Hoje vou f...</p>
+Eu acho ...</p>
               </div>
             </div>
           </a>
@@ -1621,22 +2058,18 @@ Hoje vou f...</p>
 
   
     <a
-      href="/posts/start-in-IT-pt-II/"
+      href="/posts/database-local-connection-pt-II/"
       class="btn btn-outline-primary"
       aria-label="Anterior"
     >
-      <p>Minhas impressões sobre ingressar na área de TI - Parte II</p>
+      <p>Conectando bancos de dados locais - Parte II</p>
     </a>
   
 
   
-    <a
-      href="/posts/make-your-own-code/"
-      class="btn btn-outline-primary"
-      aria-label="Próximo"
-    >
-      <p>Faça seu próprio código</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Próximo">
+      <p>-</p>
+    </div>
   
 </nav>
 
@@ -1653,8 +2086,8 @@ Hoje vou f...</p>
 
 <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = 'http://localhost:4000/posts/start-in-IT-pt-III-copy/';
-    this.page.identifier = '/posts/start-in-IT-pt-III-copy/';
+    this.page.url = 'http://localhost:4000/posts/database-local-connection-pt-III/';
+    this.page.identifier = '/posts/database-local-connection-pt-III/';
   };var disqus_observer = new IntersectionObserver(
     function (entries) {
       if (entries[0].isIntersecting) {
