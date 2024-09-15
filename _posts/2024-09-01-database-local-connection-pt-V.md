@@ -2,8 +2,8 @@
 layout: post
 title: Conectando bancos de dados locais - Extra
 date: 2024-09-14 16:00 -0300
-categories: [Programação, Banco de dados]
-tags: [programação, mongodb, banco de dados, nosql]  
+categories: [Programação, Banco de dados, Docker]
+tags: [programação, mongodb, banco de dados, nosql, docker, container]  
 ---
 
 Eu pretendia encerrar esta série de postagens sobre conexão local de banco de dados com Java para desenvolvedores trabalharem em seus projetos de estudo. Mas algumas contribuições levantaram alguns assuntos que eu ainda achei interessante trazer: subir os bancos no Docker pra evitar instalação local e demonstrar como fazer a conexão utilizando Springboot.
