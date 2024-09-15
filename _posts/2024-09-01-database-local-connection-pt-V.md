@@ -107,7 +107,84 @@ Com isso tudo no ponto, estando bem configurado, é só rodar um `docker compose
 
 Vale ressaltar que usar o compose permite que você separe ambientes específicos e que para rodar o seu banco específico tem outros passos que vai depender da sua aplicação. Coisa que vai ficar para o próximo post quando eu for falar sobre utilização do Springboot para configurar os bancos.
 
-Antes de sair escrevendo código. Recomendo você estudar um pouco mais sobre containeres e Docker, recomendo ler a própria [documentação do Docker](https://docs.docker.com/get-started/) que é bem completinha. Vou deixar esse assunto ser digerido mais um pouco pra depois partir para uma abordagem prática na aplicação exemplo que estou utilizando.
+Agora se você não quer usar o Compose por algum motivo, podemos fazer a implantação dos bancos via CLI do Docker. Para o postegres é o seguinte. Primeiro você deve baixar e executar a imagem do PostgreSQL, execute o comando abaixo para baixar a imagem e rodar o container:
+```bash
+docker run --name meu-postgres -e POSTGRES_PASSWORD=minha_senha -d -p 5432:5432 postgres
+```
+- `--name meu-postgres` dá um nome ao container.
+- `-e POSTGRES_PASSWORD=minha_senha` define a senha do usuário postgres.
+- `-d` faz o container rodar em segundo plano.
+- `-p 5432:5432` mapeia a porta do container para a máquina local (5432 é a porta padrão do PostgreSQL).
+- postgres é o nome da imagem oficial do PostgreSQL.
+
+Para acessar após rodar o container, você pode usar o `psql` ou acessar diretamente dentro do container.
+Via `psql` e aí você usa a senha que você definiu ao subir o container:
+```bash
+psql -h localhost -U postgres
+```
+Dentro do container e usar o `psql` diretamente lá:
+```bash
+docker exec -it meu-postgres bash
+psql -U postgres
+```
+Se você quiser persistir os dados entre as reinicializações do container, você pode montar um volume assim:
+```bash
+docker run --name meu-postgres -e POSTGRES_PASSWORD=minha_senha -d -p 5432:5432 -v /meu/caminho/para/volume:/var/lib/postgresql/data postgres
+```
+Isso garante que os dados do PostgreSQL fiquem armazenados localmente em `/meu/caminho/para/volume`.
+
+Agora vamos para o caso do Mongo. Primeiro precisa extrair a imagem do Docker do MongoDB:
+```bash
+docker pull mongodb/mongodb-community-server:latest
+```
+Agora pode executar a imagem em um container:
+```bash
+docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-community-server:latest
+```
+O `-p 27017:27017` neste comando mapeia a porta do contêiner para a porta do host. Isso permite que você conecte o MongoDB com uma connection string do `localhost:27017`.
+
+Verifique se o container está em execução:
+```bash
+docker container ls
+```
+A saída deve ser algo mais ou menos assim:
+```bash
+CONTAINER ID   IMAGE                                       COMMAND                  CREATED         STATUS         PORTS       NAMES
+c29db5687290   mongodb/mongodb-community-server:5.0-ubi8   "docker-entrypoint.s…"   4 seconds ago   Up 3 seconds   27017/tcp   mongo
+```
+Conecte-se ao MongoDB Deployment com `mongosh`:
+```bash
+mongosh --port 27017
+```
+Valide sua implementação com:
+```bash
+db.runCommand(
+   {
+      hello: 1
+   }
+)
+```
+O resultado deve ser um doc assim:
+```mongodb
+{
+   isWritablePrimary: true,
+   topologyVersion: {
+      processId: ObjectId("63c00e27195285e827d48908"),
+      counter: Long("0")
+},
+   maxBsonObjectSize: 16777216,
+   maxMessageSizeBytes: 48000000,
+   maxWriteBatchSize: 100000,
+   localTime: ISODate("2023-01-12T16:51:10.132Z"),
+   logicalSessionTimeoutMinutes: 30,
+   connectionId: 18,
+   minWireVersion: 0,
+   maxWireVersion: 20,
+   readOnly: false,
+   ok: 1
+}
+```
+Antes de sair escrevendo código. Recomendo você estudar um pouco mais sobre containeres e Docker, recomendo ler a própria [documentação do Docker](https://docs.docker.com/get-started/) que é bem completinha. Vou deixar esse assunto ser digerido mais um pouco pra depois partir para uma abordagem prática na aplicação exemplo que estou utilizando. Além disso, pesquise por conta própria sobre as instalações se tiver alguma dúvida. Se você tiver preguiça de pesquisar, você é um péssimo desenvolvedor.
 
 Um ponto importante é que após finalizada esta série, eu vou disponibilizar no meu Github uma versão testada e funcional de uma aplicação simples que utiliza tudo o que falamos aqui. Então pode ser que no próximo (e último post desta série) eu já traga ela para vocês.
 
