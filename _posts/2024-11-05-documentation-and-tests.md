@@ -112,6 +112,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     <version>2.5.0</version>
 </dependency>
 ```
+
 ```java
 @RestController
 @RequestMapping(path = "/address")
