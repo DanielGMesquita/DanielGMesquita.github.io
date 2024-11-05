@@ -18,6 +18,7 @@ E não tem pra que deixar pra depois o que você não vai fazer nunca.
 Uma boa documentação facilita muito o compartilhamento de conhecimento sobre uma aplicação, além de ajudar na implementação, depuração e manutenção, pois inclui todos os detalhes necessários para o correto funcionamento do código. Pra documentação eu uso bastante Javadoc e o próprio Swagger, não tem muito mistério pra usar. Outra também muito útil pra quem usar o Spring, é o Spring Rest Docs.
 
 - JavaDoc: Ferramenta utilizada para gerar documentação a partir do código fonte Java. Ele adiciona comentários no código que explicam a funcionalidade de métodos, classes e pacotes, e pode ser exportado para um documento HTML. Geralmente nas IDEs tem as ferramentas de geração desse HTML pra você visualizar. Exemplo de uso:
+
 ```java
 /**
  * Implementation of the {@link AuthenticationService} interface that provides
@@ -103,6 +104,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 ```
 
 - Swagger (OpenAPI): Uma especificação que documenta APIs RESTful de forma interativa. Ele permite a descrição detalhada de endpoints, parâmetros, respostas e exemplos, facilitando a integração e testes de APIs. No Swagger é recomendável utilizar as anotações @Operation, @ApiResponses, e @Parameter nos seus controladores para melhorar a documentação. No caso do Maven, você tem que adicionar a dependência no `pom.xml`. Por exemplo:
+
 ```xml
 <dependency>
     <groupId>org.springdoc</groupId>
