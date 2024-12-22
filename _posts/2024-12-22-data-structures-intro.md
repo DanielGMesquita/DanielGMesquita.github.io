@@ -5,6 +5,7 @@ date: 2024-12-22 02:31 -0300
 categories: [Programação, Estrutura de dados]
 tags: [programação, algoritmos, estrutura de dados, tipos abstratos de dados]  
 ---
+![Data structures](assets/img/posts/data_structures.jpeg)
 Decidi dar um passo atrás (enquanto continuo andando para frente; parece até uma dança) nos meus estudos e incluir alguns fundamentos básicos de computação para suprir lacunas técnicas que identifiquei. As três principais frentes desse plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.
 
 Normalmente, trago códigos em Java para ilustrar o que estou explicando, mas, considerando que estamos falando de conceitos básicos, pode ser necessário explorar outras linguagens que não domino, como C.
