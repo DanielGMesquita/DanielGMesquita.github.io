@@ -136,6 +136,7 @@ E aí o programa que for utilizar vai ter usar no cabeçalho:
 ```
 No exemplo abaixo eu criei um programa simples em C para calcular média de gols e assitências por jogos de um jogador de futebol qualquer.
 - player.h (as declarações relacionadas ao "Player"):
+
 ```c
 struct Player {
     int games;
@@ -146,7 +147,9 @@ struct Player {
 void create(struct Player *p);
 void setPlayerStats(struct Player *p, int goals, int assists, int games);
 ```
+
 - player.c (as implementações relacionadas ao "Player"):
+
 ```c
 #include "player.h"
 
@@ -162,7 +165,9 @@ void setPlayerStats(struct Player *p, int goals, int assists, int games){
     p->assists = assists;
 }
 ```
+
 - player_evaluator.c (programa que vai fazer os cálculos utilizar as funções relacionadas ao "Player"):
+
 ```c
 #include <stdio.h>
 #include "player.h"
@@ -190,6 +195,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 ```
+
 Em C, uma estrutura (struct) é uma coleção de campos que podem ser referenciados pelo mesmo nome, perimitindo que as informações relacionadas mantenham-se juntas.
 
 A declaração de uma estrutura define um tipo de dado, informando ao computador quantos bytes a serem reservados serão necessários para uma variável que venha a ser declarada desse tipo. Organiza dados complexos de maneira legível e ajuda a modelar objetos ou entidades no programa.
