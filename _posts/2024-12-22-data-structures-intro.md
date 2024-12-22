@@ -63,7 +63,6 @@ public class Main {
 ```
 - Classes e objetos: a programação orientada a objetos usa muitas abstrações nos programas, por exemplo, o nosso carro. Em ve de se preocupar com os detalhes técnicos do veículo, você pode criar uma classe com as informações que importam, como `ligar()`, `desligar()` e `acelerar()`. Quem for usar, não precisa saber como o motor é iniciado, apenas chama `carro.ligar()`.
 ```java
-// Classe que abstrai as funcionalidades do carro
 class Car {
     private String model;
     private boolean isOn;
