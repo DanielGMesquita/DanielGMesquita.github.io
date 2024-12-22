@@ -5,15 +5,15 @@ date: 2024-12-22 02:31 -0300
 categories: [Programação, Estrutura de dados]
 tags: [programação, algoritmos, estrutura de dados, tipos abstratos de dados]  
 ---
-Eu decidi dar um passo atrás (enquanto continuo andando pra frente, parece até uma dança) nos meus estudos e colocar alguns itens básicos de computação nos meus estudos pra poder suprir algumas lacunas técnicas que tenho. As 3 principais frentes para este plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.
+Decidi dar um passo atrás (enquanto continuo andando para frente; parece até uma dança) nos meus estudos e incluir alguns fundamentos básicos de computação para suprir lacunas técnicas que identifiquei. As três principais frentes desse plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.
 
-Normalmente trago códigos em Java pra ilustrar as coisas que estou explicando, mas considerando que estou falando de bases, pode ser necessário trazer outras linguagens que eu não tenho familiariade e vou ter que saber lidar, por exemplo C.
+Normalmente, trago códigos em Java para ilustrar o que estou explicando, mas, considerando que estamos falando de conceitos básicos, pode ser necessário explorar outras linguagens que não domino, como C.
 
-Então, quem quiser acompanhar, só seguir aqui. Eu vou fazer postagens para me ajudar a fixar os conhecimentos e documentar meus estudos. Como eu sei que ninguém muito experiente vai consultar isto aqui, vou tentar ser o mais didático possível.
+Quem quiser acompanhar, é só seguir por aqui. Vou usar as postagens para fixar o conteúdo e documentar meus estudos. Como imagino que ninguém muito experiente vá consultar isso, tentarei ser o mais didático possível.
 
-Vale ressaltar, que apesar de eu escrever em PT-BR, todos os códigos são em inglês porque é o padrão que encontramos por aí.
+Vale ressaltar que, embora eu escreva em português, todos os códigos estarão em inglês, pois é o padrão na programação.
 
-Então, contexto dado. Vamos ao que interessa. Hoje vou introduzir sobre estrutura de dados e falar de tipos abstratos de dados com alguns exemplos em Java e C.
+Agora, com o contexto explicado, vamos ao que interessa. Hoje vou introduzir o tema "estrutura de dados" e falar sobre tipos abstratos de dados, com exemplos em Java e C.
 
 #### Conceitos base
 
@@ -21,29 +21,34 @@ Existem 3 terminologias básicas que todo programador lida mesmo se não souber 
 
 ##### Algoritmo
 
-Um algoritmo é uma sequência de ações em uma linguagem de programação buscando solucionar um problema. É o padrão de comportamento associado aos elementos funcionais ativos de um processamento e deve ter um conjunto finito de ações. Recebe um conjunto de valores como entrada e produz um conjunto de valores como saída.
+Um algoritmo é uma sequência de ações em uma linguagem de programação que busca solucionar um problema. Ele define um padrão de comportamento associado aos elementos funcionais ativos de um processamento e deve ter um conjunto finito de ações. Recebe valores como entrada e produz um conjunto de valores como saída.
 
 ##### Estrutura de dados
 
-Dão suporte à descrição dos elementos funcionais passivos, complementando o algoritmo. Juntos eles compõem o programa a ser executado pelo computador. 
+As estruturas de dados dão suporte à descrição dos elementos funcionais passivos, complementando os algoritmos. Juntas, elas formam o programa que será executado pelo computador.
 
-Uma estrutura de dados precisa considerar os algoritmos a ela associados. Assim como, escolher o algoritmo depende muitas vezes da estrutura de dados a ser utilizada.
+Escolher uma estrutura de dados adequada depende frequentemente do algoritmo a ser utilizado e vice-versa.
 
-As estruturas de dados são comumente aplicadas a (não somente a) kernel (vou explicar sobre isso futuramente) de sistemas operacionais, compiladores e interpretadores, editores de texto e estruturas de bancos de dados.
+Estruturas de dados são amplamente aplicadas em contextos como:
+
+- Kernels (vou explicar isso futuramente) de sistemas operacionais;
+- Compiladores e interpretadores;
+- Editores de texto;
+- Bancos de dados.
 
 ##### Programa
 
-Junta um com o outro, de maneira básica: estruturar dados e construir algoritmo. Essa é a base de um programa.
+Basicamente, um programa é a união de algoritmos e estruturas de dados.
 
-É a formulação concreta (utilizando uma linguagem de programação) de um procedimento abstrato que atua sobre um modelo de dados também abstrato.
+Ele é a formulação concreta (em uma linguagem de programação) de um procedimento abstrato que atua sobre um modelo de dados também abstrato.
 
 #### Tipos abstratos de dados
 
-Abstração no nosso campo de estudos é focar em aspectos essenciais de um contexto, simplificando problemas complexos. Quando usamos interfaces para algo mais complicado que acontece nos bastidores.
+A abstração no nosso campo de estudos consiste em focar nos aspectos essenciais de um contexto, simplificando problemas complexos. Usamos interfaces para lidar com a complexidade "nos bastidores".
 
-Na programação, a abstração serve pra "esconder" a implementação de algo, fornecendo apenas o que interessa para quem está usando. 
+Na programação, a abstração "esconde" a implementação de algo, fornecendo apenas o que interessa para o usuário.
 
-Aqui um exemplo clássico é o carro. Você não precisa saber como funciona o motor a nível detalhado, como é a combustão da gasolina, como funciona o sistema elétrico, para o motorista dirigir só é necessário saber como funcionam as partes que ele interage.
+Um exemplo clássico é o carro. O motorista não precisa entender detalhes técnicos do motor ou do sistema elétrico, ele apenas interage com o volante, o acelerador, ignição, freio e etc.
 
 Alguns exemplos de abstração em programação:
 - Métodos estáticos: se você quiser calcular a área de um retângulo, recebendo como parâmetros da função a largura e a altura, ela precisa só das dimensões e devolve a área, você não precisa toda vez refletir sobre a fórmula `largura * altura` pra isso, a função "esconde" esse detalhe.
