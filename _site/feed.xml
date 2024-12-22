@@ -1,18 +1,18 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>https://danielmesquita.dev.br/</id>
   <title>Código e Acidez</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-09-05T17:22:21-03:00</updated>
+  <updated>2024-12-22T05:18:22-03:00</updated>
   <author>
     <name>Daniel Mesquita</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>https://danielmesquita.dev.br/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://danielmesquita.dev.br/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="pt-BR"
-    href="http://localhost:4000/"/>
-  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+    href="https://danielmesquita.dev.br/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
   <rights> © 2024 Daniel Mesquita </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
@@ -20,14 +20,14 @@
 
   
   <entry>
-    <title>Conectando bancos de dados locais - Parte III</title>
-    <link href="http://localhost:4000/posts/database-local-connection-pt-III/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte III" />
-    <published>2024-09-04T23:00:00-03:00</published>
+    <title>Estrutura de dados - introdução e tipos abstratos</title>
+    <link href="https://danielmesquita.dev.br/posts/data-structures-intro/" rel="alternate" type="text/html" title="Estrutura de dados - introdução e tipos abstratos" />
+    <published>2024-12-22T02:31:00-03:00</published>
   
-    <updated>2024-09-04T23:00:00-03:00</updated>
+    <updated>2024-12-22T05:03:18-03:00</updated>
   
-    <id>http://localhost:4000/posts/database-local-connection-pt-III/</id>
-    <content src="http://localhost:4000/posts/database-local-connection-pt-III/" />
+    <id>https://danielmesquita.dev.br/posts/data-structures-intro/</id>
+    <content type="text/html" src="https://danielmesquita.dev.br/posts/data-structures-intro/" />
     <author>
       <name>Daniel Mesquita</name>
     </author>
@@ -36,114 +36,26 @@
     
     <category term="Programação" />
     
-    <category term="Banco de dados" />
+    <category term="Estrutura de dados" />
     
   
 
-  <summary>Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: primeira parte e segunda parte, se for do seu interesse.
+  <summary>Eu decidi dar um passo atrás (enquanto continuo andando pra frente, parece até uma dança) nos meus estudos e colocar alguns itens básicos de computação nos meus estudos pra poder suprir algumas lacunas técnicas que tenho. As 3 principais frentes para este plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.
 
-Hoje vou falar de como configurar um banco NoSQL localmente, para isso vou utilizar o MongoDB Community Edition. Eu ia colocar no post como instalar, mas lendo a documentação, acho que ela está bem auto-explica...</summary>
+Normalmente trago códigos em Java pra ilustrar as coisas que es...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Conectando bancos de dados locais - Parte II</title>
-    <link href="http://localhost:4000/posts/database-local-connection-pt-II/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte II" />
-    <published>2024-09-02T06:10:00-03:00</published>
+    <title>Coisas que podem ajudar um iniciante a se destacar</title>
+    <link href="https://danielmesquita.dev.br/posts/three-tips-for-beginners/" rel="alternate" type="text/html" title="Coisas que podem ajudar um iniciante a se destacar" />
+    <published>2024-11-05T07:31:00-03:00</published>
   
-    <updated>2024-09-02T07:02:28-03:00</updated>
+    <updated>2024-11-05T07:31:00-03:00</updated>
   
-    <id>http://localhost:4000/posts/database-local-connection-pt-II/</id>
-    <content src="http://localhost:4000/posts/database-local-connection-pt-II/" />
-    <author>
-      <name>Daniel Mesquita</name>
-    </author>
-
-  
-    
-    <category term="Programação" />
-    
-    <category term="Banco de dados" />
-    
-  
-
-  <summary>Agora que já foi possível conectar o banco postegres usando o JDBC*, podemos seguir em frente e criar os métodos que vão interagir com o banco de dados. Caso não tenha visto a primeira parte, é fundamental que veja.
-
-Primeiro, precisamos alimentar as tabelas com algum dado. Isso não vai ser feito via mágica, vamos usar queries SQL mesmo. Na parte I, criamos a tabela product. Agora vamos criar u...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Conectando bancos de dados locais - Parte I</title>
-    <link href="http://localhost:4000/posts/database-local-connection-pt-I/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte I" />
-    <published>2024-09-01T08:10:00-03:00</published>
-  
-    <updated>2024-09-01T10:29:16-03:00</updated>
-  
-    <id>http://localhost:4000/posts/database-local-connection-pt-I/</id>
-    <content src="http://localhost:4000/posts/database-local-connection-pt-I/" />
-    <author>
-      <name>Daniel Mesquita</name>
-    </author>
-
-  
-    
-    <category term="Programação" />
-    
-    <category term="Banco de dados" />
-    
-  
-
-  <summary>Uma coisa que todo programador ou estudante back-end precisa ter para fazer qualquer coisa útil, é um banco de dados rodando. Afinal de contas, tudo é CRUD (polêmico) e não se faz um sem um banco de dados.
-
-Uma coisa importante é que existem alguns passos a se configurar um banco de dados local na sua máquina para poder rodar sua aplicação e manusear dados.
-
-Eu não vou me aprofundar aqui sobre ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Faça seu próprio código</title>
-    <link href="http://localhost:4000/posts/make-your-own-code/" rel="alternate" type="text/html" title="Faça seu próprio código" />
-    <published>2024-08-26T00:10:00-03:00</published>
-  
-    <updated>2024-08-26T00:10:00-03:00</updated>
-  
-    <id>http://localhost:4000/posts/make-your-own-code/</id>
-    <content src="http://localhost:4000/posts/make-your-own-code/" />
-    <author>
-      <name>Daniel Mesquita</name>
-    </author>
-
-  
-    
-    <category term="Programação" />
-    
-    <category term="Estudos" />
-    
-  
-
-  <summary>No começo dos meus estudos em programação, eu fui um dos vários casos que acompanhou cursos onde o instrutor vai escrevendo o código e ensinando as coisas enquanto o aluno vai replicando.
-
-Eu acho que esse tipo de metodologia tem seu valor, mas depende muito do aluno.
-
-Passei quase um ano sem acessar nenhum material e estudar nesse formato. Atualmente estou em uma disciplina na faculdade que o ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Minhas impressões sobre ingressar na área de TI - Parte III</title>
-    <link href="http://localhost:4000/posts/start-in-IT-pt-III-copy/" rel="alternate" type="text/html" title="Minhas impressões sobre ingressar na área de TI - Parte III" />
-    <published>2024-08-22T09:10:00-03:00</published>
-  
-    <updated>2024-08-22T09:10:00-03:00</updated>
-  
-    <id>http://localhost:4000/posts/start-in-IT-pt-III-copy/</id>
-    <content src="http://localhost:4000/posts/start-in-IT-pt-III-copy/" />
+    <id>https://danielmesquita.dev.br/posts/three-tips-for-beginners/</id>
+    <content type="text/html" src="https://danielmesquita.dev.br/posts/three-tips-for-beginners/" />
     <author>
       <name>Daniel Mesquita</name>
     </author>
@@ -156,11 +68,111 @@ Passei quase um ano sem acessar nenhum material e estudar nesse formato. Atualme
     
   
 
-  <summary>Nas últimas postagens, abordei sobre aspectos técnicos e comportamentais que, baseados na minha experiência, achei legal compartilhar para as pessoas interessadas em ingressar na área de TI.
+  <summary>Tem três coisas pouco discutidas nos cursos voltados a iniciantes na programação: testes, documentação e comunicação.
 
-Faltou um ponto importante que merece uma abordagem a parte, o inglês.
+Essas coisas geralmente são negligenciadas por quem tá começando, principalmente quem tá sem orientação.
 
-Hoje em dia com as IAs generativas, tem muita gente abandonando literatura e documentação. O que é um equívoco, pois os materiais téc...</summary>
+Aí quando se depara com a necessidade de se ter esses conhecimentos e habilidades em um contexto profissional, acha que é coisa de outro mundo.
+
+Eu sei porque já cometi ess...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Conectando bancos de dados locais - Parte VII</title>
+    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-VII/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte VII" />
+    <published>2024-09-29T23:00:00-03:00</published>
+  
+    <updated>2024-09-29T23:00:00-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-VII/</id>
+    <content type="text/html" src="https://danielmesquita.dev.br/posts/database-local-connection-pt-VII/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Programação" />
+    
+    <category term="Banco de dados" />
+    
+    <category term="Docker" />
+    
+  
+
+  <summary>No post anterior, falamos do docker compose com o MongoDB e uma aplicação Spring Boot. Hoje vou finalizar esta série (amém!) com a configuração do PostgreSQL.
+
+Configurações necessárias
+Vou pular a configuração do Dockerfile porque pouco muda, só o nome da aplicação no target.
+
+Agora vou para o docker-compose.yml, o próprio pom.xml da aplicação e o application.properties.
+
+docker-compose.yml:
+v...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Conectando bancos de dados locais - Parte VI</title>
+    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte VI" />
+    <published>2024-09-25T09:00:00-03:00</published>
+  
+    <updated>2024-09-25T09:00:00-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/</id>
+    <content type="text/html" src="https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Programação" />
+    
+    <category term="Banco de dados" />
+    
+    <category term="Docker" />
+    
+  
+
+  <summary>Depois de dar uma breve introdução da utilização do Docker e docker compose para subir a aplicação em um container, agora vamos ao detalhamento da aplicação de teste usando o MongoDB.
+
+Primeiro, para ficar preciso para a aplicação específica, precisei fazer algumas modificações para o build, vou mostrar abaixo como ficou o Dockerfile, o docker-compose.yml e o próprio pom.xml da aplicação.
+
+Dock...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Conectando bancos de dados locais - Parte V</title>
+    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-V/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte V" />
+    <published>2024-09-14T16:00:00-03:00</published>
+  
+    <updated>2024-09-25T10:01:03-03:00</updated>
+  
+    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-V/</id>
+    <content type="text/html" src="https://danielmesquita.dev.br/posts/database-local-connection-pt-V/" />
+    <author>
+      <name>Daniel Mesquita</name>
+    </author>
+
+  
+    
+    <category term="Programação" />
+    
+    <category term="Banco de dados" />
+    
+    <category term="Docker" />
+    
+  
+
+  <summary>Eu pretendia encerrar esta série de postagens sobre conexão local de banco de dados com Java para desenvolvedores trabalharem em seus projetos de estudo. Mas algumas contribuições levantaram alguns assuntos que eu ainda achei interessante trazer: subir os bancos no Docker pra evitar instalação local e demonstrar como fazer a conexão utilizando Springboot.
+
+A lógica de eu ter abordado primeiro s...</summary>
 
   </entry>
 
