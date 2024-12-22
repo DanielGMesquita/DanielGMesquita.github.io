@@ -1,6 +1,8 @@
 /*
   Style for page Category and Tag
 */
+@use '../addon/variables.scss' as *;
+@use '../addon/module.scss' as *;
 
 .dash {
   margin: 0 0.5rem 0.6rem 0.5rem;

@@ -4,6 +4,8 @@
 
 /* ---------- scss placeholder --------- */
 
+@use 'variables' as *;
+
 %heading {
   color: var(--heading-color);
   font-weight: 400;

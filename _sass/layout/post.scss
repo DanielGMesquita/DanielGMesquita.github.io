@@ -2,6 +2,9 @@
   Post-specific style
 */
 
+@use '../addon/variables.scss' as *;
+@use '../addon/module.scss' as *;
+
 %btn-post-nav {
   width: 50%;
   position: relative;

@@ -1,0 +1,24 @@
+{
+  "name": "danielgmesquita.github.io",
+  "version": "1.0.0",
+  "description": "Welcome to the repository for the *Códigos e Acidez* blog. This blog is built with [Jekyll](https://jekyllrb.com/) using the [Chirpy](https://chirpy.cotes.page/) theme. This README provides instructions on how to set up Jekyll and Chirpy, as well as information about the blog's content.",
+  "main": "index.js",
+  "scripts": {
+    "build": "jekyll build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielGMesquita/DanielGMesquita.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielGMesquita/DanielGMesquita.github.io/issues"
+  },
+  "homepage": "https://github.com/DanielGMesquita/DanielGMesquita.github.io#readme",
+  "devDependencies": {
+    "sass": "^1.83.0",
+    "sass-migrator": "^2.3.0"
+  }
+}

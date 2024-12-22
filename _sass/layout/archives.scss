@@ -1,6 +1,8 @@
 /*
   Style for Archives
 */
+@use '../addon/variables.scss' as *;
+@use '../addon/module.scss' as *;
 
 #archives {
   letter-spacing: 0.03rem;
