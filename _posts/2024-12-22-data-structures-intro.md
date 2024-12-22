@@ -109,7 +109,7 @@ public class Main {
     }
 }
 ```
-Como isso bem claro, podemos concluir que quando lidamos com um tipo abstrato de dados, nos concentramos em aspectos essenciais do tipo de dado (suas operações) e nos abstraímos da sua implementação. O usuário só enxerga a interface, quem se preocupa com a implementação é o programador.
+Com isso bem claro, podemos concluir que quando lidamos com um tipo abstrato de dados, nos concentramos em aspectos essenciais do tipo de dado (suas operações) e nos abstraímos da sua implementação. O usuário só enxerga a interface, quem se preocupa com a implementação é o programador.
 
 ##### Implementação de tipos abstratos de dados
 Em liguagens orientadas a objetos, como Java, costumamos utilizara para isso classes e interfaces. Já nas estruturadas, como C, definimos os tipos juntamente com a implementação das funções.
