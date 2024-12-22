@@ -88,7 +88,8 @@ class Car {
         }
     }
 }
-
+```
+```java
 public class Main {
     public static void main(String[] args) {
         // Cria o objeto "Car" e interage com ele
