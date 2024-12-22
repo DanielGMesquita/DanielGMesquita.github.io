@@ -20,5 +20,8 @@
   "devDependencies": {
     "sass": "^1.83.0",
     "sass-migrator": "^2.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
   }
 }
