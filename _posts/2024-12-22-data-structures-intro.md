@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Estrutura de dados - introdução e tipos abstratos
-date: 2024-22-03 02:31 -0300
+date: 2024-12-22 02:31 -0300
 categories: [Programação, Estrutura de dados]
 tags: [programação, algoritmos, estrutura de dados, tipos abstratos de dados]  
 ---
