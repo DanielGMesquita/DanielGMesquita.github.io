@@ -559,6 +559,7 @@ This utility method performs a full deep clone via Java serialization.
 
 ## Further Reading
 - [Java HashMap Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html)
+- [Article - How does HashMap works in Java](https://yonatankarp.com/how-does-hashmap-work-in-java)
 
 I created a [repository](https://github.com/DanielGMesquita/hashmap-exercises) on my GitHub if you interest to see how it works.
 
