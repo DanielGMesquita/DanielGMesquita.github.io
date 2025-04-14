@@ -1,3 +1,10 @@
+---
+layout: post
+title: Mastering HashMap: Common Interview Pitfalls and How to Avoid Them
+date: 2025-04-13 07:30 -0300
+categories: [Programação]
+tags: [programação, Java, HashMap]  
+---
 # Mastering HashMap: Common Interview Pitfalls and How to Avoid Them
 
 This guide is a resource to help developers understand HashMap usage in Java. It explains common interview problems, their impact on real-world applications, and how to solve or avoid them.
