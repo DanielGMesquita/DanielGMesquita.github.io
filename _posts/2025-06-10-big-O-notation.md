@@ -200,6 +200,8 @@ Big O notation is a way to describe the performance of an algorithm in terms of 
 
 It is essential for writing efficient and scalable code, especially when dealing with large datasets or complex algorithms. By understanding Big O notation, we can make informed decisions about the algorithms and data structures we use in our applications.
 
+In this post I'm not talking about memory usage, this is a topic for another post. But it is important to note that Big O notation can also be applied to space complexity, which refers to the amount of memory an algorithm uses as the input size increases.
+
 ---
 
 This post is part of the things I like to share when I'm studying or learning something new. I try to keep it simple and clear, so you can understand the concepts without getting lost in technical jargon. If you have any questions or suggestions for future topics, feel free to reach out!
