@@ -16,33 +16,42 @@
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="pt-BR" >
   <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: light)"
+    content="#f7f7f7"
+  />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: dark)"
+    content="#1b1b1e"
+  />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  />
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  /><!-- Setup Open Graph image -->
 
-  
-
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
+   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Estrutura de dados - introdução e tipos abstratos" />
 <meta property="og:locale" content="pt_BR" />
-<meta name="description" content="Eu decidi dar um passo atrás (enquanto continuo andando pra frente, parece até uma dança) nos meus estudos e colocar alguns itens básicos de computação nos meus estudos pra poder suprir algumas lacunas técnicas que tenho. As 3 principais frentes para este plano de fundamentos são: sistemas operacionais, redes e estrutura de dados." />
-<meta property="og:description" content="Eu decidi dar um passo atrás (enquanto continuo andando pra frente, parece até uma dança) nos meus estudos e colocar alguns itens básicos de computação nos meus estudos pra poder suprir algumas lacunas técnicas que tenho. As 3 principais frentes para este plano de fundamentos são: sistemas operacionais, redes e estrutura de dados." />
-<link rel="canonical" href="https://danielmesquita.dev.br/posts/data-structures-intro/" />
-<meta property="og:url" content="https://danielmesquita.dev.br/posts/data-structures-intro/" />
+<meta name="description" content="Decidi dar um passo atrás (enquanto continuo andando para frente; parece até uma dança) nos meus estudos e incluir alguns fundamentos básicos de computação para suprir lacunas técnicas que identifiquei. As três principais frentes desse plano de fundamentos são: sistemas operacionais, redes e estrutura de dados." />
+<meta property="og:description" content="Decidi dar um passo atrás (enquanto continuo andando para frente; parece até uma dança) nos meus estudos e incluir alguns fundamentos básicos de computação para suprir lacunas técnicas que identifiquei. As três principais frentes desse plano de fundamentos são: sistemas operacionais, redes e estrutura de dados." />
+<link rel="canonical" href="http://0.0.0.0:4000/posts/data-structures-intro/" />
+<meta property="og:url" content="http://0.0.0.0:4000/posts/data-structures-intro/" />
 <meta property="og:site_name" content="Código e Acidez" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-12-22T02:31:00-03:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Estrutura de dados - introdução e tipos abstratos" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-22T05:03:18-03:00","datePublished":"2024-12-22T02:31:00-03:00","description":"Eu decidi dar um passo atrás (enquanto continuo andando pra frente, parece até uma dança) nos meus estudos e colocar alguns itens básicos de computação nos meus estudos pra poder suprir algumas lacunas técnicas que tenho. As 3 principais frentes para este plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.","headline":"Estrutura de dados - introdução e tipos abstratos","mainEntityOfPage":{"@type":"WebPage","@id":"https://danielmesquita.dev.br/posts/data-structures-intro/"},"url":"https://danielmesquita.dev.br/posts/data-structures-intro/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-22T02:31:00-03:00","datePublished":"2024-12-22T02:31:00-03:00","description":"Decidi dar um passo atrás (enquanto continuo andando para frente; parece até uma dança) nos meus estudos e incluir alguns fundamentos básicos de computação para suprir lacunas técnicas que identifiquei. As três principais frentes desse plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.","headline":"Estrutura de dados - introdução e tipos abstratos","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/posts/data-structures-intro/"},"url":"http://0.0.0.0:4000/posts/data-structures-intro/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -71,61 +80,163 @@
 
 
   <!-- Resource Hints -->
-  
-    
-      
-        <link rel="preconnect" href="https://fonts.googleapis.com" >
-      
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
-      
-    
-      
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" >
-      
-    
-      
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" >
-      
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
-      
-    
-  
+     <link
+  rel="preconnect" href="https://fonts.googleapis.com" >  <link
+  rel="dns-prefetch" href="https://fonts.googleapis.com" >    <link
+  rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link
+  rel="dns-prefetch" href="https://fonts.gstatic.com" >    <link
+  rel="preconnect" href="https://cdn.jsdelivr.net" >  <link
+  rel="dns-prefetch" href="https://cdn.jsdelivr.net" >   
 
   <!-- Bootstrap -->
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  />
   
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+  <link
+    rel="stylesheet"
+    href="/assets/css/jekyll-theme-chirpy.css"
+  />
 
   <!-- Web Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+  />
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css"
+  />
 
   <!-- 3rd-party Dependencies -->
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css"
+  />
+   
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css"
+  />
+   
+  <!-- Image Popup -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css"
+  />
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
-  
+  <!-- Language Switcher Styles -->
+  <style>
+  #language-switcher {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 
-  
-    <!-- Image Popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
-  
+  #language-switcher .lang-button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-muted-color);
+    background: none;
+    border: 1px solid var(--btn-border-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  #language-switcher .lang-button:hover {
+    color: var(--text-color);
+    border-color: var(--link-color);
+    background-color: var(--button-bg);
+  }
+
+  #language-switcher .lang-button .lang-text {
+    font-weight: 500;
+    min-width: 1.5rem;
+    text-align: center;
+  }
+
+  #language-switcher .lang-button .fa-caret-down {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+
+  #language-switcher .lang-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 10rem;
+    background-color: var(--main-bg);
+    border: 1px solid var(--btn-border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: all 0.2s ease;
+    z-index: 1000;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  #language-switcher .lang-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #language-switcher .lang-menu .lang-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  #language-switcher .lang-menu .lang-item:hover {
+    background-color: var(--button-bg);
+  }
+
+  #language-switcher .lang-menu .lang-item.active {
+    font-weight: 600;
+    color: var(--link-color);
+  }
+
+  #language-switcher .lang-menu .lang-item i.fa-check {
+    width: 1rem;
+    font-size: 0.875rem;
+  }
+
+  #language-switcher .lang-menu .lang-item:not(.active) i.fa-check {
+    display: none;
+  }
+
+  #language-switcher:hover .lang-button .fa-caret-down,
+  #language-switcher .lang-button[aria-expanded="true"] .fa-caret-down {
+    transform: rotate(180deg);
+  }
+</style>
+
 
   <!-- JavaScript -->
 
-  
-    <!-- Switch the mode between dark and light. -->
+   <!-- Switch the mode between dark and light. -->
 
 <script type="text/javascript">
   class ModeToggle {
@@ -230,9 +341,6 @@
 
   const modeToggle = new ModeToggle();
 </script>
-
-  
-
   <!-- A placeholder to allow defining custom metadata -->
 
 </head>
@@ -398,27 +506,14 @@
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
   >
     <nav id="breadcrumb" aria-label="Breadcrumb">
-      
+         
+      <span>
+        <a href="/">Home</a>
+      </span>
 
-      
-        
-          
-            <span>
-              <a href="/">Home</a>
-            </span>
-
-          
-        
-          
-        
-          
-            
-              <span>Estrutura de dados - introdução e tipos abstratos</span>
-            
-
-          
-        
-      
+           
+      <span>Estrutura de dados - introdução e tipos abstratos</span>
+         
     </nav>
     <!-- endof #breadcrumb -->
 
@@ -434,6 +529,26 @@
       <i class="fas fa-search fa-fw"></i>
     </button>
 
+    <!-- Language Switcher -->
+<div id="language-switcher">
+  <button class="lang-button" type="button" aria-label="Language Switcher">
+    <i class="fas fa-language fa-fw"></i>
+    <span class="lang-text"
+      >PT</span
+    >
+    <i class="fas fa-caret-down"></i>
+  </button>
+  <div class="lang-menu">
+    
+    <a class="lang-item" href="/en/posts/data-structures-intro/"> English </a>
+    <a class="lang-item active" href="/posts/data-structures-intro/">
+      <i class="fas fa-check fa-fw"></i> Português (BR)
+    </a>
+    
+  </div>
+</div>
+
+
     <search id="search" class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
@@ -443,9 +558,13 @@
         aria-label="search"
         autocomplete="off"
         placeholder="Buscar..."
-      >
+      />
     </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancelar</button>
+    <button
+      type="button"
+      class="btn btn-link text-decoration-none"
+      id="search-cancel"
+    >Cancelar</button>
   </div>
 </header>
 
@@ -480,6 +599,79 @@
 
 
 
+
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
 
 
 <!-- Add header for code snippets -->
@@ -649,29 +841,6 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Atualizado
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1734854598"
-  data-df="DD/MM/YYYY"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  22/12/2024
-</time>
-
-        </span>
-      
 
       
 
@@ -714,7 +883,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1488 palavras"
+  title="1460 palavras"
 >
   <em>8 min</em> de leitura</span>
 
@@ -724,15 +893,16 @@
   </header>
 
   <div class="content">
-    <p>Eu decidi dar um passo atrás (enquanto continuo andando pra frente, parece até uma dança) nos meus estudos e colocar alguns itens básicos de computação nos meus estudos pra poder suprir algumas lacunas técnicas que tenho. As 3 principais frentes para este plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.</p>
+    <p><a href="/assets/img/posts/data_structures.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts/data_structures.jpeg" alt="Data structures" loading="lazy"></a>
+Decidi dar um passo atrás (enquanto continuo andando para frente; parece até uma dança) nos meus estudos e incluir alguns fundamentos básicos de computação para suprir lacunas técnicas que identifiquei. As três principais frentes desse plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.</p>
 
-<p>Normalmente trago códigos em Java pra ilustrar as coisas que estou explicando, mas considerando que estou falando de bases, pode ser necessário trazer outras linguagens que eu não tenho familiariade e vou ter que saber lidar, por exemplo C.</p>
+<p>Normalmente, trago códigos em Java para ilustrar o que estou explicando, mas, considerando que estamos falando de conceitos básicos, pode ser necessário explorar outras linguagens que não domino, como C.</p>
 
-<p>Então, quem quiser acompanhar, só seguir aqui. Eu vou fazer postagens para me ajudar a fixar os conhecimentos e documentar meus estudos. Como eu sei que ninguém muito experiente vai consultar isto aqui, vou tentar ser o mais didático possível.</p>
+<p>Quem quiser acompanhar, é só seguir por aqui. Vou usar as postagens para fixar o conteúdo e documentar meus estudos. Como imagino que ninguém muito experiente vá consultar isso, tentarei ser o mais didático possível.</p>
 
-<p>Vale ressaltar, que apesar de eu escrever em PT-BR, todos os códigos são em inglês porque é o padrão que encontramos por aí.</p>
+<p>Vale ressaltar que, embora eu escreva em português, todos os códigos estarão em inglês, pois é o padrão na programação.</p>
 
-<p>Então, contexto dado. Vamos ao que interessa. Hoje vou introduzir sobre estrutura de dados e falar de tipos abstratos de dados com alguns exemplos em Java e C.</p>
+<p>Agora, com o contexto explicado, vamos ao que interessa. Hoje vou introduzir o tema “estrutura de dados” e falar sobre tipos abstratos de dados, com exemplos em Java e C.</p>
 
 <h4 id="conceitos-base"><span class="me-2">Conceitos base</span><a href="#conceitos-base" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -740,29 +910,36 @@
 
 <h5 id="algoritmo"><span class="me-2">Algoritmo</span><a href="#algoritmo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<p>Um algoritmo é uma sequência de ações em uma linguagem de programação buscando solucionar um problema. É o padrão de comportamento associado aos elementos funcionais ativos de um processamento e deve ter um conjunto finito de ações. Recebe um conjunto de valores como entrada e produz um conjunto de valores como saída.</p>
+<p>Um algoritmo é uma sequência de ações em uma linguagem de programação que busca solucionar um problema. Ele define um padrão de comportamento associado aos elementos funcionais ativos de um processamento e deve ter um conjunto finito de ações. Recebe valores como entrada e produz um conjunto de valores como saída.</p>
 
 <h5 id="estrutura-de-dados"><span class="me-2">Estrutura de dados</span><a href="#estrutura-de-dados" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<p>Dão suporte à descrição dos elementos funcionais passivos, complementando o algoritmo. Juntos eles compõem o programa a ser executado pelo computador.</p>
+<p>As estruturas de dados dão suporte à descrição dos elementos funcionais passivos, complementando os algoritmos. Juntas, elas formam o programa que será executado pelo computador.</p>
 
-<p>Uma estrutura de dados precisa considerar os algoritmos a ela associados. Assim como, escolher o algoritmo depende muitas vezes da estrutura de dados a ser utilizada.</p>
+<p>Escolher uma estrutura de dados adequada depende frequentemente do algoritmo a ser utilizado e vice-versa.</p>
 
-<p>As estruturas de dados são comumente aplicadas a (não somente a) kernel (vou explicar sobre isso futuramente) de sistemas operacionais, compiladores e interpretadores, editores de texto e estruturas de bancos de dados.</p>
+<p>Estruturas de dados são amplamente aplicadas em contextos como:</p>
+
+<ul>
+  <li>Kernels (vou explicar isso futuramente) de sistemas operacionais;</li>
+  <li>Compiladores e interpretadores;</li>
+  <li>Editores de texto;</li>
+  <li>Bancos de dados.</li>
+</ul>
 
 <h5 id="programa"><span class="me-2">Programa</span><a href="#programa" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<p>Junta um com o outro, de maneira básica: estruturar dados e construir algoritmo. Essa é a base de um programa.</p>
+<p>Basicamente, um programa é a união de algoritmos e estruturas de dados.</p>
 
-<p>É a formulação concreta (utilizando uma linguagem de programação) de um procedimento abstrato que atua sobre um modelo de dados também abstrato.</p>
+<p>Ele é a formulação concreta (em uma linguagem de programação) de um procedimento abstrato que atua sobre um modelo de dados também abstrato.</p>
 
 <h4 id="tipos-abstratos-de-dados"><span class="me-2">Tipos abstratos de dados</span><a href="#tipos-abstratos-de-dados" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>Abstração no nosso campo de estudos é focar em aspectos essenciais de um contexto, simplificando problemas complexos. Quando usamos interfaces para algo mais complicado que acontece nos bastidores.</p>
+<p>A abstração no nosso campo de estudos consiste em focar nos aspectos essenciais de um contexto, simplificando problemas complexos. Usamos interfaces para lidar com a complexidade “nos bastidores”.</p>
 
-<p>Na programação, a abstração serve pra “esconder” a implementação de algo, fornecendo apenas o que interessa para quem está usando.</p>
+<p>Na programação, a abstração “esconde” a implementação de algo, fornecendo apenas o que interessa para o usuário.</p>
 
-<p>Aqui um exemplo clássico é o carro. Você não precisa saber como funciona o motor a nível detalhado, como é a combustão da gasolina, como funciona o sistema elétrico, para o motorista dirigir só é necessário saber como funcionam as partes que ele interage.</p>
+<p>Um exemplo clássico é o carro. O motorista não precisa entender detalhes técnicos do motor ou do sistema elétrico, ele apenas interage com o volante, o acelerador, ignição, freio e etc.</p>
 
 <p>Alguns exemplos de abstração em programação:</p>
 <ul>
@@ -795,48 +972,9 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
-  <li>
-    <p>Classes e objetos: a programação orientada a objetos usa muitas abstrações nos programas, por exemplo, o nosso carro. Em ve de se preocupar com os detalhes técnicos do veículo, você pode criar uma classe com as informações que importam, como <code class="language-plaintext highlighter-rouge">ligar()</code>, <code class="language-plaintext highlighter-rouge">desligar()</code> e <code class="language-plaintext highlighter-rouge">acelerar()</code>. Quem for usar, não precisa saber como o motor é iniciado, apenas chama <code class="language-plaintext highlighter-rouge">carro.ligar()</code>.
-```java
-// Classe que abstrai as funcionalidades do carro
-class Car {
-  private String model;
-  private boolean isOn;</p>
-
-    <p>// Construtor para inicializar a classe
-  public Car(String model) {
-      this.model = model;
-      this.isOn = false;
-  }</p>
-
-    <p>// Liga o carro
-  public void turnOn() {
-      this.isOn = true;
-      System.out.println(“The “ + model + “ is now on.”);
-  }</p>
-
-    <p>// Acelera
-  public void accelerate() {
-      if (isOn) {
-          System.out.println(“The “ + model + “ is accelerating!”);
-      } else {
-          System.out.println(“You need to turn on the car first!”);
-      }
-  }
-}</p>
-  </li>
-</ul>
-
-<p>public class Main {
-    public static void main(String[] args) {
-        // Cria o objeto “Car” e interage com ele
-        Car myCar = new Car(“Fusca”);
-        myCar.turnOn();
-        myCar.accelerate();
-    }
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+  <li>Classes e objetos: a programação orientada a objetos usa muitas abstrações nos programas, por exemplo, o nosso carro. Em ve de se preocupar com os detalhes técnicos do veículo, você pode criar uma classe com as informações que importam, como <code class="language-plaintext highlighter-rouge">ligar()</code>, <code class="language-plaintext highlighter-rouge">desligar()</code> e <code class="language-plaintext highlighter-rouge">acelerar()</code>. Quem for usar, não precisa saber como o motor é iniciado, apenas chama <code class="language-plaintext highlighter-rouge">carro.ligar()</code>.
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -846,17 +984,89 @@ class Car {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>- Bibliotecas e APIs externas: quando você utiliza estes no seu programa, você só lida com funções prontas, não se preocupando como essas funções foram escritas e o seu processamento, a abstração oculta toda sua complexidade.
-```java
-public class Main {
-    public static void main(String[] args) {
-        // Using the sqrt method from the Math class to calculate the square root
-        double squareRoot = Math.sqrt(25);
-        System.out.println("The square root of 25 is: " + squareRoot); // Output: 5.0
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
-<p>Como isso bem claro, podemos concluir que quando lidamos com um tipo abstrato de dados, nos concentramos em aspectos essenciais do tipo de dado (suas operações) e nos abstraímos da sua implementação. O usuário só enxerga a interface, quem se preocupa com a implementação é o programador.</p>
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="nc">String</span> <span class="n">model</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isOn</span><span class="o">;</span>
+
+  <span class="c1">// Construtor para inicializar a classe</span>
+  <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="nc">String</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">isOn</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">// Liga o carro</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">turnOn</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">isOn</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The "</span> <span class="o">+</span> <span class="n">model</span> <span class="o">+</span> <span class="s">" is now on."</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="c1">// Acelera</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">isOn</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The "</span> <span class="o">+</span> <span class="n">model</span> <span class="o">+</span> <span class="s">" is accelerating!"</span><span class="o">);</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You need to turn on the car first!"</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Cria o objeto "Car" e interage com ele</span>
+      <span class="nc">Car</span> <span class="n">myCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">(</span><span class="s">"Fusca"</span><span class="o">);</span>
+      <span class="n">myCar</span><span class="o">.</span><span class="na">turnOn</span><span class="o">();</span>
+      <span class="n">myCar</span><span class="o">.</span><span class="na">accelerate</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>Bibliotecas e APIs externas: quando você utiliza estes no seu programa, você só lida com funções prontas, não se preocupando como essas funções foram escritas e o seu processamento, a abstração oculta toda sua complexidade.
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Using the sqrt method from the Math class to calculate the square root</span>
+      <span class="kt">double</span> <span class="n">squareRoot</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">25</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The square root of 25 is: "</span> <span class="o">+</span> <span class="n">squareRoot</span><span class="o">);</span> <span class="c1">// Output: 5.0</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <p>Com isso bem claro, podemos concluir que quando lidamos com um tipo abstrato de dados, nos concentramos em aspectos essenciais do tipo de dado (suas operações) e nos abstraímos da sua implementação. O usuário só enxerga a interface, quem se preocupa com a implementação é o programador.</p>
+  </li>
+</ul>
 
 <h5 id="implementação-de-tipos-abstratos-de-dados"><span class="me-2">Implementação de tipos abstratos de dados</span><a href="#implementação-de-tipos-abstratos-de-dados" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 <p>Em liguagens orientadas a objetos, como Java, costumamos utilizara para isso classes e interfaces. Já nas estruturadas, como C, definimos os tipos juntamente com a implementação das funções.</p>
@@ -883,19 +1093,35 @@ public class Main {
 </span></pre></td></tr></tbody></table></code></div></div>
 <p>No exemplo abaixo eu criei um programa simples em C para calcular média de gols e assitências por jogos de um jogador de futebol qualquer.</p>
 <ul>
-  <li>player.h (as declarações relacionadas ao “Player”):
-```c
-struct Player {
-  int games;
-  int goals;
-  int assists;
-};</li>
+  <li>player.h (as declarações relacionadas ao “Player”):</li>
 </ul>
 
-<p>void create(struct Player *p);
-void setPlayerStats(struct Player *p, int goals, int assists, int games);</p>
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">struct</span> <span class="n">Player</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">games</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">goals</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">assists</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">create</span><span class="p">(</span><span class="k">struct</span> <span class="n">Player</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setPlayerStats</span><span class="p">(</span><span class="k">struct</span> <span class="n">Player</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">goals</span><span class="p">,</span> <span class="kt">int</span> <span class="n">assists</span><span class="p">,</span> <span class="kt">int</span> <span class="n">games</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>player.c (as implementações relacionadas ao “Player”):</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -909,38 +1135,27 @@ void setPlayerStats(struct Player *p, int goals, int assists, int games);</p>
 11
 12
 13
-14
-15
-</pre></td><td class="rouge-code"><pre>- player.c (as implementações relacionadas ao "Player"):
-```c
-#include "player.h"
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"player.h"</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">create</span><span class="p">(</span><span class="k">struct</span> <span class="n">Player</span> <span class="o">*</span><span class="n">p</span><span class="p">){</span>
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">games</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">goals</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">assists</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-void create(struct Player *p){
-    p-&gt;games = 0;
-    p-&gt;goals = 0;
-    p-&gt;assists = 0;
-}
-
-void setPlayerStats(struct Player *p, int goals, int assists, int games){
-    p-&gt;games = games;
-    p-&gt;goals = goals;
-    p-&gt;assists = assists;
-}
+<span class="kt">void</span> <span class="nf">setPlayerStats</span><span class="p">(</span><span class="k">struct</span> <span class="n">Player</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">goals</span><span class="p">,</span> <span class="kt">int</span> <span class="n">assists</span><span class="p">,</span> <span class="kt">int</span> <span class="n">games</span><span class="p">){</span>
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">games</span> <span class="o">=</span> <span class="n">games</span><span class="p">;</span>
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">goals</span> <span class="o">=</span> <span class="n">goals</span><span class="p">;</span>
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">assists</span> <span class="o">=</span> <span class="n">assists</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
 <ul>
-  <li>player_evaluator.c (programa que vai fazer os cálculos utilizar as funções relacionadas ao “Player”):
-```c
-#include <stdio.h>
-#include "player.h"</stdio.h></li>
+  <li>player_evaluator.c (programa que vai fazer os cálculos utilizar as funções relacionadas ao “Player”):</li>
 </ul>
 
-<p>int main(int argc, char *argv[]) {
-    int games, goals, assists;
-    struct Player p;
-    create(&amp;p);</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -957,23 +1172,43 @@ void setPlayerStats(struct Player *p, int goals, int assists, int games){
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>printf("Type number of goals...");
-scanf("%d", &amp;goals);
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">"player.h"</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">games</span><span class="p">,</span> <span class="n">goals</span><span class="p">,</span> <span class="n">assists</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Player</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>
 
-printf("Type number of assists...");
-scanf("%d", &amp;assists);
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Type number of goals..."</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">goals</span><span class="p">);</span>
 
-printf("Type number of games...");
-scanf("%d", &amp;games);
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Type number of assists..."</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">assists</span><span class="p">);</span>
 
-setPlayerStats(&amp;p, goals, assists, games);
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Type number of games..."</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">games</span><span class="p">);</span>
 
-printf("Assists per game: %.2f\n", (double)p.assists/p.games);
-printf("Goals per game: %.2f\n", (double)p.goals/p.games);
+    <span class="n">setPlayerStats</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">goals</span><span class="p">,</span> <span class="n">assists</span><span class="p">,</span> <span class="n">games</span><span class="p">);</span>
 
-printf("\n\nEnd of application\n\n");
-return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que podem ser referenciados pelo mesmo nome, perimitindo que as informações relacionadas mantenham-se juntas.
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Assists per game: %.2f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">p</span><span class="p">.</span><span class="n">assists</span><span class="o">/</span><span class="n">p</span><span class="p">.</span><span class="n">games</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Goals per game: %.2f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">p</span><span class="p">.</span><span class="n">goals</span><span class="o">/</span><span class="n">p</span><span class="p">.</span><span class="n">games</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">End of application</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<p>Em C, uma estrutura (struct) é uma coleção de campos que podem ser referenciados pelo mesmo nome, perimitindo que as informações relacionadas mantenham-se juntas.</p>
 
 <p>A declaração de uma estrutura define um tipo de dado, informando ao computador quantos bytes a serem reservados serão necessários para uma variável que venha a ser declarada desse tipo. Organiza dados complexos de maneira legível e ajuda a modelar objetos ou entidades no programa.</p>
 
@@ -1065,21 +1300,21 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Estrutura%20de%20dados%20-%20introdu%C3%A7%C3%A3o%20e%20tipos%20abstratos%20-%20C%C3%B3digo%20e%20Acidez&url=https%3A%2F%2Fdanielmesquita.dev.br%2Fposts%2Fdata-structures-intro%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Estrutura%20de%20dados%20-%20introdu%C3%A7%C3%A3o%20e%20tipos%20abstratos%20-%20C%C3%B3digo%20e%20Acidez&url=http%3A%2F%2F0.0.0.0%3A4000%2Fposts%2Fdata-structures-intro%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Estrutura%20de%20dados%20-%20introdu%C3%A7%C3%A3o%20e%20tipos%20abstratos%20-%20C%C3%B3digo%20e%20Acidez&u=https%3A%2F%2Fdanielmesquita.dev.br%2Fposts%2Fdata-structures-intro%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Estrutura%20de%20dados%20-%20introdu%C3%A7%C3%A3o%20e%20tipos%20abstratos%20-%20C%C3%B3digo%20e%20Acidez&u=http%3A%2F%2F0.0.0.0%3A4000%2Fposts%2Fdata-structures-intro%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fdanielmesquita.dev.br%2Fposts%2Fdata-structures-intro%2F&text=Estrutura%20de%20dados%20-%20introdu%C3%A7%C3%A3o%20e%20tipos%20abstratos%20-%20C%C3%B3digo%20e%20Acidez" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2F0.0.0.0%3A4000%2Fposts%2Fdata-structures-intro%2F&text=Estrutura%20de%20dados%20-%20introdu%C3%A7%C3%A3o%20e%20tipos%20abstratos%20-%20C%C3%B3digo%20e%20Acidez" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1134,35 +1369,35 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/data-structures-intro/">Estrutura de dados - introdução e tipos abstratos</a>
+          <a href="/en/posts/big-O-notation/">Big O Notation - what is it, where it lives, what it eats</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/three-tips-for-beginners/">Coisas que podem ajudar um iniciante a se destacar</a>
+          <a href="/posts/big-O-notation/">Notação Big O - o que é, onde vive, do que se alimenta</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/database-local-connection-pt-VII/">Conectando bancos de dados locais - Parte VII</a>
+          <a href="/en/posts/hashmap-guide/">Mastering HashMap - Common Interview Pitfalls and How to Avoid Them</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/database-local-connection-pt-V/">Conectando bancos de dados locais - Parte V</a>
+          <a href="/posts/hashmap-guide/">Dominando HashMap - Armadilhas Comuns em Entrevistas e Como Evitá-las</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/database-local-connection-pt-VI/">Conectando bancos de dados locais - Parte VI</a>
+          <a href="/en/posts/working-with-large-established-codebases/">What I learned in 6 months working with legacy code</a>
         </li>
       
     </ul>
@@ -1296,29 +1531,6 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1344,36 +1556,10 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1454,8 +1640,6 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
-      
-    
   
     
     
@@ -1495,54 +1679,6 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1594,94 +1730,10 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
-      
-    
   
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1792,8 +1844,6 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
-      
-    
   
     
     
@@ -1869,7 +1919,30 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1904,6 +1977,606 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1924,13 +2597,7 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
         <a class="post-tag btn btn-outline-primary" href="/tags/programa%C3%A7%C3%A3o/">programação</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/banco-de-dados/">banco de dados</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/carreira/">carreira</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/juninho/">juninho</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/programming/">programming</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/mongodb/">mongodb</a>
@@ -1939,16 +2606,22 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
         <a class="post-tag btn btn-outline-primary" href="/tags/nosql/">nosql</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/banco-de-dados/">banco de dados</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/container/">container</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">database</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/postgres/">postgres</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/sql/">sql</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/basics/">basics</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/basics/">basics</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/career/">career</a>
       
     </div>
   </section>
@@ -2156,6 +2829,78 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2169,6 +2914,64 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Leia também</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/data-structures-stack/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1735389060"
+  data-df="DD/MM/YYYY"
+  
+>
+  28/12/2024
+</time>
+
+              <h4 class="pt-0 my-2">Estrutura de dados - Pilha</h4>
+              <div class="text-muted">
+                <p>Depois de passar sobre introdução a estrutura de dados, agora vou falar sobre pilha.
+
+Se você tá chegando aqui desavisado, não tem nada a ver com a pilha que você usa no seu controle remoto. A pilh...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/working-with-large-established-codebases/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1735900200"
+  data-df="DD/MM/YYYY"
+  
+>
+  03/01/2025
+</time>
+
+              <h4 class="pt-0 my-2">O que eu aprendi em 6 meses trabalhando com código legado</h4>
+              <div class="text-muted">
+                <p>Como alguns sabem, em Agosto de 2024 eu comecei a trabalhar para uma empresa da Europa. Além da mudança de empresas e culturas, uma outra coisa que mudou muito na minha dinâmica foi o tipo de progr...</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/database-local-connection-pt-V/" class="post-preview card h-100">
@@ -2198,64 +3001,6 @@ return 0; } ``` Em C, uma estrutura (struct) é uma coleção de campos que pode
           </a>
         </article>
       
-        <article class="col">
-          <a href="/posts/database-local-connection-pt-IV/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1725566400"
-  data-df="DD/MM/YYYY"
-  
->
-  05/09/2024
-</time>
-
-              <h4 class="pt-0 my-2">Conectando bancos de dados locais - Parte IV</h4>
-              <div class="text-muted">
-                <p>Hoje vou finalizar o conteúdo sobre MongoDB com Java rodando local. A parte grossa de instalação e configuração já foi. Agora é só configurar as entidades, criar os métodos necessários e botar pra ...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/database-local-connection-pt-III/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1725501600"
-  data-df="DD/MM/YYYY"
-  
->
-  04/09/2024
-</time>
-
-              <h4 class="pt-0 my-2">Conectando bancos de dados locais - Parte III</h4>
-              <div class="text-muted">
-                <p>Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: primeira parte e segunda parte, se for do seu interesse.
-
-Hoje vou f...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2271,18 +3016,22 @@ Hoje vou f...</p>
 
   
     <a
-      href="/posts/three-tips-for-beginners/"
+      href="/en/posts/data-structures-intro/"
       class="btn btn-outline-primary"
       aria-label="Anterior"
     >
-      <p>Coisas que podem ajudar um iniciante a se destacar</p>
+      <p>Data structures - introduction and abstract data types</p>
     </a>
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Próximo">
-      <p>-</p>
-    </div>
+    <a
+      href="/en/posts/data-structures-stack/"
+      class="btn btn-outline-primary"
+      aria-label="Próximo"
+    >
+      <p>Data structures - Stack</p>
+    </a>
   
 </nav>
 
@@ -2299,7 +3048,7 @@ Hoje vou f...</p>
 
 <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = 'https://danielmesquita.dev.br/posts/data-structures-intro/';
+    this.page.url = 'http://0.0.0.0:4000/posts/data-structures-intro/';
     this.page.identifier = '/posts/data-structures-intro/';
   };var disqus_observer = new IntersectionObserver(
     function (entries) {
@@ -2348,7 +3097,7 @@ Hoje vou f...</p>
   "
 >
   <p>©
-    <time>2024</time>
+    <time>2026</time>
 
     
       <a href="https://github.com/DanielGMesquita">Daniel Mesquita</a>.
@@ -2508,29 +3257,6 @@ Hoje vou f...</p>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2556,36 +3282,10 @@ Hoje vou f...</p>
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2666,8 +3366,6 @@ Hoje vou f...</p>
     
     
     
-      
-    
   
     
     
@@ -2707,54 +3405,6 @@ Hoje vou f...</p>
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2806,94 +3456,10 @@ Hoje vou f...</p>
     
     
     
-      
-    
   
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3004,8 +3570,6 @@ Hoje vou f...</p>
     
     
     
-      
-    
   
     
     
@@ -3081,7 +3645,30 @@ Hoje vou f...</p>
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3116,6 +3703,606 @@ Hoje vou f...</p>
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3136,13 +4323,7 @@ Hoje vou f...</p>
         <a class="post-tag btn btn-outline-primary" href="/tags/programa%C3%A7%C3%A3o/">programação</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/banco-de-dados/">banco de dados</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/carreira/">carreira</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/juninho/">juninho</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/programming/">programming</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/mongodb/">mongodb</a>
@@ -3151,16 +4332,22 @@ Hoje vou f...</p>
         <a class="post-tag btn btn-outline-primary" href="/tags/nosql/">nosql</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/banco-de-dados/">banco de dados</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/container/">container</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">database</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/postgres/">postgres</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/sql/">sql</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/basics/">basics</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/basics/">basics</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/career/">career</a>
       
     </div>
   </section>
@@ -3219,24 +4406,9 @@ Hoje vou f...</p>
 
 <!-- layout specified -->
 
-
-
-
-  
-
-  
-    <!-- image lazy-loading & popup & clipboard -->
-    
-  
-
-
-
-
-
-
-
-
-
+   
+<!-- image lazy-loading & popup & clipboard -->
+      
 
 
 
@@ -3303,25 +4475,20 @@ Hoje vou f...</p>
 
   <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/pt.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
 
-
-
-
-
-
+  
 <script src="/assets/js/dist/post.min.js"></script>
 
 
 
 <!-- Pageviews -->
+ 
+   
 
-  
-
-  
-
-
-
-
-
+<!-- Language Switcher -->
+<script
+  defer
+  src="/assets/js/language-switcher.js"
+></script>
 
 
     <!--

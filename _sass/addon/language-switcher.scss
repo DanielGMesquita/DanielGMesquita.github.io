@@ -1,0 +1,99 @@
+/*
+  Language Switcher Styles
+*/
+
+#language-switcher {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+
+  .lang-button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-muted-color);
+    background: none;
+    border: 1px solid var(--btn-border-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--text-color);
+      border-color: var(--link-color);
+      background-color: var(--button-bg);
+    }
+
+    .lang-text {
+      font-weight: 500;
+      min-width: 1.5rem;
+      text-align: center;
+    }
+
+    .fa-caret-down {
+      font-size: 0.75rem;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .lang-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 10rem;
+    background-color: var(--main-bg);
+    border: 1px solid var(--btn-border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: all 0.2s ease;
+    z-index: 1000;
+    overflow: hidden;
+    pointer-events: none;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: var(--button-bg);
+      }
+
+      &.active {
+        font-weight: 600;
+        color: var(--link-color);
+      }
+
+      i.fa-check {
+        width: 1rem;
+        font-size: 0.875rem;
+      }
+
+      &:not(.active) i.fa-check {
+        display: none;
+      }
+    }
+  }
+
+  &:hover .lang-button .fa-caret-down,
+  .lang-button[aria-expanded='true'] .fa-caret-down {
+    transform: rotate(180deg);
+  }
+}

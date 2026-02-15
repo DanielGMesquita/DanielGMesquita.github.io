@@ -1,0 +1,25 @@
+<!-- Language Switcher -->
+<div id="language-switcher">
+  <button class="lang-button" type="button" aria-label="Language Switcher">
+    <i class="fas fa-language fa-fw"></i>
+    <span class="lang-text"
+      >{% if page.lang == 'en' %}EN{% else %}PT{% endif %}</span
+    >
+    <i class="fas fa-caret-down"></i>
+  </button>
+  <div class="lang-menu">
+    {% if page.lang == 'en' %}
+    <a class="lang-item active" href="{{ page.url }}">
+      <i class="fas fa-check fa-fw"></i> English
+    </a>
+    <a class="lang-item" href="{{ page.url | replace: '/en/', '/' }}">
+      Português (BR)
+    </a>
+    {% else %}
+    <a class="lang-item" href="/en{{ page.url }}"> English </a>
+    <a class="lang-item active" href="{{ page.url }}">
+      <i class="fas fa-check fa-fw"></i> Português (BR)
+    </a>
+    {% endif %}
+  </div>
+</div>

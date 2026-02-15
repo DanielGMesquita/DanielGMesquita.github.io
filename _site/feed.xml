@@ -1,33 +1,33 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://danielmesquita.dev.br/</id>
+  <id>http://0.0.0.0:4000/</id>
   <title>Código e Acidez</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-12-22T07:54:30-03:00</updated>
+  <updated>2026-02-15T13:34:57-03:00</updated>
   <author>
     <name>Daniel Mesquita</name>
-    <uri>https://danielmesquita.dev.br/</uri>
+    <uri>http://0.0.0.0:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="https://danielmesquita.dev.br/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://0.0.0.0:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="pt-BR"
-    href="https://danielmesquita.dev.br/"/>
+    href="http://0.0.0.0:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
-  <rights> © 2024 Daniel Mesquita </rights>
+  <rights> © 2026 Daniel Mesquita </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
-    <title>Estrutura de dados - introdução e tipos abstratos</title>
-    <link href="https://danielmesquita.dev.br/posts/data-structures-intro/" rel="alternate" type="text/html" title="Estrutura de dados - introdução e tipos abstratos" />
-    <published>2024-12-22T02:31:00-03:00</published>
+    <title>Notação Big O - o que é, onde vive, do que se alimenta</title>
+    <link href="http://0.0.0.0:4000/posts/big-O-notation/" rel="alternate" type="text/html" title="Notação Big O - o que é, onde vive, do que se alimenta" />
+    <published>2025-06-10T07:30:00-03:00</published>
   
-    <updated>2024-12-22T05:03:18-03:00</updated>
+    <updated>2025-06-10T07:30:00-03:00</updated>
   
-    <id>https://danielmesquita.dev.br/posts/data-structures-intro/</id>
-    <content type="text/html" src="https://danielmesquita.dev.br/posts/data-structures-intro/" />
+    <id>http://0.0.0.0:4000/posts/big-O-notation/</id>
+    <content type="text/html" src="http://0.0.0.0:4000/posts/big-O-notation/" />
     <author>
       <name>Daniel Mesquita</name>
     </author>
@@ -36,58 +36,50 @@
     
     <category term="Programação" />
     
-    <category term="Estrutura de dados" />
-    
   
 
-  <summary>Eu decidi dar um passo atrás (enquanto continuo andando pra frente, parece até uma dança) nos meus estudos e colocar alguns itens básicos de computação nos meus estudos pra poder suprir algumas lacunas técnicas que tenho. As 3 principais frentes para este plano de fundamentos são: sistemas operacionais, redes e estrutura de dados.
+  <summary>Tive uma entrevista hoje e, após quase duas horas de uma boa conversa sobre alguns conceitos-chave de algoritmos e boas práticas de programação, há alguns tópicos que eu gostaria de compartilhar com vocês. Talvez você seja um engenheiro de software experiente e isso possa parecer óbvio para você, mas meu público principal são engenheiros iniciantes e estudantes.
 
-Normalmente trago códigos em Java pra ilustrar as coisas que es...</summary>
+O primeiro tópico sobre o qual ...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Coisas que podem ajudar um iniciante a se destacar</title>
-    <link href="https://danielmesquita.dev.br/posts/three-tips-for-beginners/" rel="alternate" type="text/html" title="Coisas que podem ajudar um iniciante a se destacar" />
-    <published>2024-11-05T07:31:00-03:00</published>
+    <title>Big O Notation - what is it, where it lives, what it eats</title>
+    <link href="http://0.0.0.0:4000/en/posts/big-O-notation/" rel="alternate" type="text/html" title="Big O Notation - what is it, where it lives, what it eats" />
+    <published>2025-06-10T07:30:00-03:00</published>
   
-    <updated>2024-11-05T07:31:00-03:00</updated>
+    <updated>2025-06-10T07:30:00-03:00</updated>
   
-    <id>https://danielmesquita.dev.br/posts/three-tips-for-beginners/</id>
-    <content type="text/html" src="https://danielmesquita.dev.br/posts/three-tips-for-beginners/" />
+    <id>http://0.0.0.0:4000/en/posts/big-O-notation/</id>
+    <content type="text/html" src="http://0.0.0.0:4000/en/posts/big-O-notation/" />
     <author>
       <name>Daniel Mesquita</name>
     </author>
 
   
     
-    <category term="Carreira" />
-    
     <category term="Programação" />
     
   
 
-  <summary>Tem três coisas pouco discutidas nos cursos voltados a iniciantes na programação: testes, documentação e comunicação.
+  <summary>I had an interview today, and after almost two hours of a good conversation about some key concepts of algorthims and good practices of coding, there is some topics that I would like to share with you. Maybe you’re a skilled software engineer, this may be sound as obvious to you but my main public is entry-level engineers and students.
 
-Essas coisas geralmente são negligenciadas por quem tá começando, principalmente quem tá sem orientação.
-
-Aí quando se depara com a necessidade de se ter esses conhecimentos e habilidades em um contexto profissional, acha que é coisa de outro mundo.
-
-Eu sei porque já cometi ess...</summary>
+The first topic I would like to talk about it is the Big O...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Conectando bancos de dados locais - Parte VII</title>
-    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-VII/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte VII" />
-    <published>2024-09-29T23:00:00-03:00</published>
+    <title>Dominando HashMap - Armadilhas Comuns em Entrevistas e Como Evitá-las</title>
+    <link href="http://0.0.0.0:4000/posts/hashmap-guide/" rel="alternate" type="text/html" title="Dominando HashMap - Armadilhas Comuns em Entrevistas e Como Evitá-las" />
+    <published>2025-04-13T07:30:00-03:00</published>
   
-    <updated>2024-09-29T23:00:00-03:00</updated>
+    <updated>2025-04-13T07:30:00-03:00</updated>
   
-    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-VII/</id>
-    <content type="text/html" src="https://danielmesquita.dev.br/posts/database-local-connection-pt-VII/" />
+    <id>http://0.0.0.0:4000/posts/hashmap-guide/</id>
+    <content type="text/html" src="http://0.0.0.0:4000/posts/hashmap-guide/" />
     <author>
       <name>Daniel Mesquita</name>
     </author>
@@ -96,34 +88,24 @@ Eu sei porque já cometi ess...</summary>
     
     <category term="Programação" />
     
-    <category term="Banco de dados" />
-    
-    <category term="Docker" />
-    
   
 
-  <summary>No post anterior, falamos do docker compose com o MongoDB e uma aplicação Spring Boot. Hoje vou finalizar esta série (amém!) com a configuração do PostgreSQL.
+  <summary>Este guia é um recurso para ajudar desenvolvedores a entender o uso de HashMap em Java. Ele explica problemas comuns em entrevistas, seu impacto em aplicações do mundo real e como resolvê-los ou evitá-los.
 
-Configurações necessárias
-Vou pular a configuração do Dockerfile porque pouco muda, só o nome da aplicação no target.
-
-Agora vou para o docker-compose.yml, o próprio pom.xml da aplicação e o application.properties.
-
-docker-compose.yml:
-v...</summary>
+Decidi trabalhar nisso porque estava estudando alguns assuntos que são comuns em entrevistas de codificação ao vivo. E escrever sobre as coisas que estou estudando e praticando me ajuda a en...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Conectando bancos de dados locais - Parte VI</title>
-    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte VI" />
-    <published>2024-09-25T09:00:00-03:00</published>
+    <title>Mastering HashMap - Common Interview Pitfalls and How to Avoid Them</title>
+    <link href="http://0.0.0.0:4000/en/posts/hashmap-guide/" rel="alternate" type="text/html" title="Mastering HashMap - Common Interview Pitfalls and How to Avoid Them" />
+    <published>2025-04-13T07:30:00-03:00</published>
   
-    <updated>2024-09-25T09:00:00-03:00</updated>
+    <updated>2025-04-13T07:30:00-03:00</updated>
   
-    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/</id>
-    <content type="text/html" src="https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/" />
+    <id>http://0.0.0.0:4000/en/posts/hashmap-guide/</id>
+    <content type="text/html" src="http://0.0.0.0:4000/en/posts/hashmap-guide/" />
     <author>
       <name>Daniel Mesquita</name>
     </author>
@@ -132,30 +114,24 @@ v...</summary>
     
     <category term="Programação" />
     
-    <category term="Banco de dados" />
-    
-    <category term="Docker" />
-    
   
 
-  <summary>Depois de dar uma breve introdução da utilização do Docker e docker compose para subir a aplicação em um container, agora vamos ao detalhamento da aplicação de teste usando o MongoDB.
+  <summary>This guide is a resource to help developers understand HashMap usage in Java. It explains common interview problems, their impact on real-world applications, and how to solve or avoid them.
 
-Primeiro, para ficar preciso para a aplicação específica, precisei fazer algumas modificações para o build, vou mostrar abaixo como ficou o Dockerfile, o docker-compose.yml e o próprio pom.xml da aplicação.
-
-Dock...</summary>
+I decided to work on this because I was studying for some subjects that are common in live coding interviews. And writing down the things that I am studying and practicing helps me to understand everything ...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Conectando bancos de dados locais - Parte V</title>
-    <link href="https://danielmesquita.dev.br/posts/database-local-connection-pt-V/" rel="alternate" type="text/html" title="Conectando bancos de dados locais - Parte V" />
-    <published>2024-09-14T16:00:00-03:00</published>
+    <title>O que eu aprendi em 6 meses trabalhando com código legado</title>
+    <link href="http://0.0.0.0:4000/posts/working-with-large-established-codebases/" rel="alternate" type="text/html" title="O que eu aprendi em 6 meses trabalhando com código legado" />
+    <published>2025-01-03T07:30:00-03:00</published>
   
-    <updated>2024-09-25T10:01:03-03:00</updated>
+    <updated>2025-01-03T07:30:00-03:00</updated>
   
-    <id>https://danielmesquita.dev.br/posts/database-local-connection-pt-V/</id>
-    <content type="text/html" src="https://danielmesquita.dev.br/posts/database-local-connection-pt-V/" />
+    <id>http://0.0.0.0:4000/posts/working-with-large-established-codebases/</id>
+    <content type="text/html" src="http://0.0.0.0:4000/posts/working-with-large-established-codebases/" />
     <author>
       <name>Daniel Mesquita</name>
     </author>
@@ -164,15 +140,11 @@ Dock...</summary>
     
     <category term="Programação" />
     
-    <category term="Banco de dados" />
-    
-    <category term="Docker" />
-    
   
 
-  <summary>Eu pretendia encerrar esta série de postagens sobre conexão local de banco de dados com Java para desenvolvedores trabalharem em seus projetos de estudo. Mas algumas contribuições levantaram alguns assuntos que eu ainda achei interessante trazer: subir os bancos no Docker pra evitar instalação local e demonstrar como fazer a conexão utilizando Springboot.
+  <summary>Como alguns sabem, em Agosto de 2024 eu comecei a trabalhar para uma empresa da Europa. Além da mudança de empresas e culturas, uma outra coisa que mudou muito na minha dinâmica foi o tipo de programa que eu trabalho.
 
-A lógica de eu ter abordado primeiro s...</summary>
+Nas minhas experiências anteriores, eu sempre trabalhei com bases de código mais flexíveis e enxutas, com poucos desenvolvedores (às vezes só eu) trabalhando, voltadas para inova...</summary>
 
   </entry>
 
