@@ -15,8 +15,11 @@
     <a class="lang-item" href="{{ page.url | replace: '/en/', '/' }}">
       Português (BR)
     </a>
-    {% else %}
+    {% else %} {% assign is_home = false %} {% if page.url == '/' or page.url ==
+    '/index.html' %} {% assign is_home = true %} {% endif %} {% if page.layout
+    == 'post' or is_home %}
     <a class="lang-item" href="/en{{ page.url }}"> English </a>
+    {% endif %}
     <a class="lang-item active" href="{{ page.url }}">
       <i class="fas fa-check fa-fw"></i> Português (BR)
     </a>

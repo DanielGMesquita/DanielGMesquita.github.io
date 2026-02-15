@@ -17,18 +17,20 @@ assign posts = '' | split: '' %}
 <!-- Portuguese page with pagination -->
 {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %} {%
 assign pinned_num = pinned.size | minus: offset %} {% if pinned_num > 0 %} {%
-for i in (offset..pinned.size) limit: pinned_num %} {% assign posts = posts |
-push: pinned[i] %} {% endfor %} {% else %} {% assign pinned_num = 0 %} {% endif
-%}
+assign pinned_end = offset | plus: pinned_num | minus: 1 %} {% if pinned_end >=
+pinned.size %}{% assign pinned_end = pinned.size | minus: 1 %}{% endif %} {% for
+i in (offset..pinned_end) %} {% assign posts = posts | push: pinned[i] %} {%
+endfor %} {% else %} {% assign pinned_num = 0 %} {% endif %}
 
 <!-- Get default posts -->
 
 {% assign default_beg = offset | minus: pinned.size %} {% if default_beg < 0 %}
 {% assign default_beg = 0 %} {% endif %} {% assign default_num = paginator.posts
 | size | minus: pinned_num %} {% assign default_end = default_beg | plus:
-default_num | minus: 1 %} {% if default_num > 0 %} {% for i in
-(default_beg..default_end) %} {% assign posts = posts | push: default[i] %} {%
-endfor %} {% endif %} {% endif %}
+default_num | minus: 1 %} {% if default_end >= default.size %}{% assign
+default_end = default.size | minus: 1 %}{% endif %} {% if default_num > 0 and
+default_end >= default_beg %} {% for i in (default_beg..default_end) %} {%
+assign posts = posts | push: default[i] %} {% endfor %} {% endif %} {% endif %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
