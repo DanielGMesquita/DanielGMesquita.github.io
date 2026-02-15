@@ -4,6 +4,7 @@ title: Coisas que podem ajudar um iniciante a se destacar
 date: 2024-11-05 07:31 -0300
 categories: [Carreira, Programação]
 tags: [carreira, programação, juninho]
+lang: pt-BR
 ---
 Tem três coisas pouco discutidas nos cursos voltados a iniciantes na programação: testes, documentação e comunicação.
 

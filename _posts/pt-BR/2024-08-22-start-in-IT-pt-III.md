@@ -3,7 +3,8 @@ layout: post
 title: Minhas impressões sobre ingressar na área de TI - Parte III
 date: 2024-08-22 09:10 -0300
 categories: [Carreira, Programação]
-tags: [carreira, programação, juninho, inglês]  
+tags: [carreira, programação, juninho, inglês]
+lang: pt-BR
 ---
 Nas últimas postagens, abordei sobre aspectos técnicos e comportamentais que, baseados na minha experiência, achei legal compartilhar para as pessoas interessadas em ingressar na área de TI.
 

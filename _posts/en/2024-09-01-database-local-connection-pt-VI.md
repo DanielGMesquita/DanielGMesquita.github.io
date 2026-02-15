@@ -1,14 +1,15 @@
 ---
 layout: post
-title: Conectando bancos de dados locais - Parte VI
+title: Connecting local databases - Part VI
 date: 2024-09-25 09:00 -0300
-categories: [Programação, Banco de dados, Docker]
-tags: [programação, mongodb, banco de dados, nosql, docker, container]  
+categories: [Programming, Database, Docker]
+tags: [programming, mongodb, database, nosql, docker, container]
+lang: en
 ---
 
-Depois de dar uma breve introdução da utilização do Docker e docker compose para subir a aplicação em um container, agora vamos ao detalhamento da aplicação de teste usando o MongoDB.
+After giving a brief introduction to using Docker and docker compose to bring up the application in a container, now let's go to the details of the test application using MongoDB.
 
-Primeiro, para ficar preciso para a aplicação específica, precisei fazer algumas modificações para o build, vou mostrar abaixo como ficou o Dockerfile, o docker-compose.yml e o próprio pom.xml da aplicação.
+First, to be precise for the specific application, I needed to make some modifications for the build, I'll show below how the Dockerfile, docker-compose.yml and the pom.xml of the application turned out.
 
 Dockerfile:
 ```Dockerfile
@@ -24,9 +25,9 @@ COPY target/delivery-management-api-mongo-1.0-SNAPSHOT.jar app.jar
 # Defina o comando de inicialização
 ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
-Essa imagem do openjdk:17 é uma versão "slim", que é mais leve e adequada para a maioria das aplicações.
+This openjdk:17 image is a "slim" version, which is lighter and suitable for most applications.
 
-O `ENTRYPOINT` deve ser ajustado para refletir o caminho correto dentro do container, atenção nisso.
+The `ENTRYPOINT` must be adjusted to reflect the correct path inside the container, pay attention to this.
 
 `docker-compose.yml`:
 ```yml
@@ -56,47 +57,47 @@ volumes:
 networks:
   app-network:
 ```
-- Versão: Especifica a versão da sintaxe do Docker Compose que você está utilizando. A versão 3.9 é uma das versões mais recentes, oferecendo suporte a muitos recursos, como redes e volumes.
-- Services: Esta seção define os contêineres que serão executados. Cada contêiner é uma instância de um serviço.
+- Version: Specifies the version of the Docker Compose syntax you're using. Version 3.9 is one of the most recent versions, offering support for many features, such as networks and volumes.
+- Services: This section defines the containers that will be run. Each container is an instance of a service.
 
-Serviço MongoDB:
-- mongo: O nome do serviço. Este é o nome que você usará para referenciar este contêiner.
+MongoDB Service:
+- mongo: The service name. This is the name you'll use to reference this container.
 
-- image: Especifica a imagem do Docker a ser utilizada.
+- image: Specifies the Docker image to be used.
 
-- mongo:latest indica que a última versão da imagem oficial do MongoDB será baixada e utilizada. Caso você já tenha uma imagem do MongoDB localmente, essa imagem será usada.
+- mongo:latest indicates that the latest version of the official MongoDB image will be downloaded and used. If you already have a MongoDB image locally, that image will be used.
 
-- ports: Mapeia as portas do contêiner para as portas da máquina host. "27017:27017" significa que a porta 27017 do contêiner (padrão do MongoDB) será acessível na porta 27017 do host. Isso permite que você acesse o MongoDB de fora do contêiner, por exemplo, utilizando um cliente MongoDB.
+- ports: Maps the container ports to the host machine ports. "27017:27017" means that port 27017 of the container (MongoDB default) will be accessible on port 27017 of the host. This allows you to access MongoDB from outside the container, for example, using a MongoDB client.
 
-- volumes: Mapeia um volume do Docker, o que permite a persistência de dados. mongo_data:/data/db indica que o volume chamado mongo_data será utilizado para armazenar os dados do MongoDB no diretório /data/db dentro do contêiner. Isso significa que, mesmo que o contêiner seja destruído, os dados persistem no volume.
+- volumes: Maps a Docker volume, which allows data persistence. mongo_data:/data/db indicates that the volume called mongo_data will be used to store MongoDB data in the /data/db directory inside the container. This means that even if the container is destroyed, the data persists in the volume.
 
-Serviço da Aplicação:
-- delivery_management_api: Nome do serviço para a sua aplicação.
+Application Service:
+- delivery_management_api: Service name for your application.
 
-- build: Indica que o contêiner deve ser construído a partir do Dockerfile localizado no diretório atual (.). O Dockerfile deve estar no mesmo diretório onde o docker-compose.yml está localizado.
+- build: Indicates that the container should be built from the Dockerfile located in the current directory (.). The Dockerfile must be in the same directory where docker-compose.yml is located.
 
-- ports: Similar ao serviço MongoDB, "8080:8080" mapeia a porta 8080 do contêiner para a porta 8080 do host. Isso permite que você acesse sua aplicação pela URL http://localhost:8080.
+- ports: Similar to the MongoDB service, "8080:8080" maps port 8080 of the container to port 8080 of the host. This allows you to access your application through the URL http://localhost:8080.
 
-- depends_on: Especifica que o serviço delivery_management_api depende do serviço mongo. Isso garante que o MongoDB seja iniciado antes da aplicação. No entanto, isso não garante que o MongoDB esteja totalmente pronto para aceitar conexões quando a aplicação iniciar.
+- depends_on: Specifies that the delivery_management_api service depends on the mongo service. This ensures that MongoDB is started before the application. However, this doesn't guarantee that MongoDB is fully ready to accept connections when the application starts.
 
-- environment: Define variáveis de ambiente para o contêiner. Essas variáveis são passadas para o ambiente da aplicação e podem ser utilizadas para configuração.
+- environment: Defines environment variables for the container. These variables are passed to the application environment and can be used for configuration.
 
-- SPRING_DATA_MONGODB_URI: URL de conexão ao MongoDB. Aqui, mongodb://mongo:27017/spring-test indica que a aplicação deve se conectar ao serviço MongoDB nomeado mongo na porta 27017 e usar o banco de dados spring-test.
+- SPRING_DATA_MONGODB_URI: MongoDB connection URL. Here, mongodb://mongo:27017/spring-test indicates that the application should connect to the MongoDB service named mongo on port 27017 and use the spring-test database.
 
-- SPRING_DATA_MONGODB_DATABASE: Nome do banco de dados a ser utilizado pela aplicação.
+- SPRING_DATA_MONGODB_DATABASE: Database name to be used by the application.
 
-Volumes e redes:
-- Volumes: Define os volumes utilizados pelos serviços. Aqui, mongo_data é um volume que será usado pelo serviço mongo para persistir dados. Ao criar um volume nomeado, você pode gerenciá-lo facilmente e ele persistirá mesmo se os contêineres forem removidos.
+Volumes and networks:
+- Volumes: Defines the volumes used by the services. Here, mongo_data is a volume that will be used by the mongo service to persist data. By creating a named volume, you can easily manage it and it will persist even if the containers are removed.
 
-- Networks (opcional): Esta seção é opcional e permite que você defina redes personalizadas para conectar os serviços. Se você definir uma rede aqui, os serviços podem se comunicar entre si usando seus nomes. No seu exemplo, não há nenhuma rede definida.
+- Networks (optional): This section is optional and allows you to define custom networks to connect the services. If you define a network here, the services can communicate with each other using their names. In your example, there is no network defined.
 
-Subir a aplicação usando o docker-compose facilita muito a vida da pessoa desenvolvedora em inúmeros aspectos. Um deles é não se preocupar com ambiente local de desenvolvimento, uma vez que vai rodar tudo no container definido.
+Bringing up the application using docker-compose makes the developer's life much easier in numerous aspects. One of them is not worrying about local development environment, since everything will run in the defined container.
 
-Com a configuração do Docker e docker compose funcionando (testei a aplicação e chamadas no banco) agora vamos aos ajustes da aplicação para utilização do Springboot, algo que vai diminuir muito a complexidade de código e facilitar a estrutura da aplicação.
+With the Docker and docker compose configuration working (I tested the application and calls to the database) now let's go to the application adjustments to use Springboot, something that will greatly reduce code complexity and facilitate the application structure.
 
-Primeiro, podemos dar adeus a classe de configuração do banco de dados, uma vez que usando o framework e o Docker, não precisamos construir os relacionamentos manualmente.
+First, we can say goodbye to the database configuration class, since using the framework and Docker, we don't need to build the relationships manually.
 
-O `pom.xml` da aplicação precisa estar adequado pra proporcionar estrutura pra rodar da maneira que definimos.
+The application's `pom.xml` needs to be adequate to provide structure to run the way we defined.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -187,17 +188,17 @@ O `pom.xml` da aplicação precisa estar adequado pra proporcionar estrutura pra
 </project>
 ```
 
-O goal repackage do `spring-boot-maven-plugin` tem uma relação importante com o Docker e o Docker Compose, especialmente quando se trata de empacotar e executar sua aplicação Spring Boot em um container:
-- cria um arquivo .jar executável que contém toda a aplicação, permitindo que execute a aplicação Spring em qualquer ambiente com o Java instalado;
-- com o .jar executável, você pode facilmente executar sua aplicação Spring Boot no container com um único comando, como `java -jar app.jar`. Isso simplifica o processo de inicialização da aplicação no ambiente Docker;
-- quando você executa docker-compose up, o Compose irá construir a imagem da aplicação usando o Dockerfile, onde o JAR já foi criado pelo Maven com o goal `repackage`. Isso significa que você não precisa se preocupar em construir e gerenciar o JAR separadamente, pois o Docker faz isso por você;
-- usar o repackage e Docker em conjunto garante que você tenha um ambiente de execução consistente e portátil, você pode mover o container para qualquer máquina que tenha o Docker, e sua aplicação Spring Boot funcionará exatamente da mesma forma, com todas as suas dependências já incluídas no JAR.
+The repackage goal of `spring-boot-maven-plugin` has an important relationship with Docker and Docker Compose, especially when it comes to packaging and running your Spring Boot application in a container:
+- creates an executable .jar file that contains the entire application, allowing you to run the Spring application in any environment with Java installed;
+- with the executable .jar, you can easily run your Spring Boot application in the container with a single command, like `java -jar app.jar`. This simplifies the application startup process in the Docker environment;
+- when you run docker-compose up, Compose will build the application image using the Dockerfile, where the JAR has already been created by Maven with the `repackage` goal. This means you don't need to worry about building and managing the JAR separately, as Docker does it for you;
+- using repackage and Docker together ensures that you have a consistent and portable execution environment, you can move the container to any machine that has Docker, and your Spring Boot application will work exactly the same way, with all its dependencies already included in the JAR.
 
-Você pode rodar sem usar o repackage, mas algumas desvantagens que vejo é aumento da complexidade pra gerenciar dependências, imagens maiores e probabilidade maior de erro devido a gerenciamento errado das imagens.
+You can run without using repackage, but some disadvantages I see are increased complexity to manage dependencies, larger images and higher probability of error due to wrong image management.
 
-Com a estrutura da aplicação pronta pra usar o Spring e rodar no Docker, podemos ir ao código.
+With the application structure ready to use Spring and run in Docker, we can go to the code.
 
-Primeiro, precisamos ajustar a classe principal (que roda a aplicação) para configurar o Spring Boot. Nas versões anteriores, eu fiz alguns códigos nelas pra mostrar as alterações no banco, aqui não vou fazer isso. Vou usar a arquitetura em camadas, separando as responsabilidades entre Repository, Service e Controller adequadamente.
+First, we need to adjust the main class (which runs the application) to configure Spring Boot. In previous versions, I did some code in them to show the changes in the database, here I won't do that. I'll use the layered architecture, separating responsibilities between Repository, Service and Controller appropriately.
 
 ```java
 import org.springframework.boot.SpringApplication;
@@ -210,9 +211,9 @@ public class Application {
   }
 }
 ```
-A entidade "Product" sofre algumas alterações para incluir para podermos utilizar o Spring Boot e o Mongo, uma vez que o framework proporciona recursos para interação com o banco exigindo menos código boilerplate.
+The "Product" entity undergoes some changes to include so we can use Spring Boot and Mongo, since the framework provides resources for interaction with the database requiring less boilerplate code.
 
-Os getters, setters, construtores etc se mantém, o que muda é a anotação @Document do mongo que define que aquela entidade representa a coleção `Product` no meu banco de dados. Além disso, o atributo `id` recebe a anotação `@Id`, responsável pela geração automática do id único dentro da coleção.
+The getters, setters, constructors etc remain, what changes is the @Document annotation from mongo that defines that this entity represents the `Product` collection in my database. Additionally, the `id` attribute receives the `@Id` annotation, responsible for automatic generation of the unique id within the collection.
 ```java
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -290,7 +291,7 @@ public class Product {
   }
 }
 ```
-A classe `ProductRepository` também sofre alteração e fica bem mais simplificada, considerando o propósito desta aplicação. Aqui estou transformando em uma interface que extende a interface MongoRepository, que já contém os métodos necessários para interação com o banco. Mas é possível inserir alguns métodos personalizados como os exemplos abaixo. 
+The `ProductRepository` class also undergoes changes and becomes much more simplified, considering the purpose of this application. Here I'm transforming it into an interface that extends the MongoRepository interface, which already contains the necessary methods for interaction with the database. But it's possible to insert some custom methods like the examples below.
 
 ```java
 import java.util.List;
@@ -309,7 +310,7 @@ public interface ProductRepository extends MongoRepository<Product, String> {
 }
 ```
 
-Agora a classe de `Service`, onde estão as regras de negócio da aplicação e que orquestra a interação entre repository e Controller:
+Now the `Service` class, where the business rules of the application are and which orchestrates the interaction between repository and Controller:
 ```java
 import java.util.List;
 import org.danielmesquita.entities.Product;
@@ -345,7 +346,7 @@ public class ProductService {
   }
 }
 ```
-E por último, o Controller que recebe as requisições HTTP (GET, POST, PUT, DELETE), processa e devolve as respostas.
+And lastly, the Controller that receives HTTP requests (GET, POST, PUT, DELETE), processes and returns responses.
 ```java
 import java.util.List;
 import org.danielmesquita.entities.Product;
@@ -396,16 +397,16 @@ public class ProductController {
   }
 }
 ```
-Aqui usei a anotação `@RestController` do Spring, que é uma especialização de `@Controller`. 
+Here I used the `@RestController` annotation from Spring, which is a specialization of `@Controller`.
 
-A anotação `@Controller` é mais adequada para para um controlador MVC (Model-View-Control), que retorna views, geralmente HTML. Pra quem usa JSP, deve ser familiar isso.
+The `@Controller` annotation is more suitable for an MVC controller (Model-View-Control), which returns views, usually HTML. For those who use JSP, this should be familiar.
 
-A diferença é que o que optei utilizar é mais adequado para APIs RESTful. Combina o `@Controller` e `@ResponseBody`, permitindo retornar dados diretamente no corpo da resposta, geralmente em JSON, mas pode ser em XML também.
+The difference is that what I chose to use is more suitable for RESTful APIs. It combines `@Controller` and `@ResponseBody`, allowing you to return data directly in the response body, usually in JSON, but it can be XML too.
 
-Outro ponto foi que utilizei a anotação `@Autowired` para injeção de dependências. Ela vai fornecer automaticamente uma instância da classe que preciso, neste caso é `ProductService`.
+Another point was that I used the `@Autowired` annotation for dependency injection. It will automatically provide an instance of the class I need, in this case it's `ProductService`.
 
-As principais vantagens de usar essa anotação é a redução de acoplamento, uma vez que você pode fazer alteração no service sem mexer no controller, e facilidade para testar e criar mocks.
+The main advantages of using this annotation are reduction of coupling, since you can make changes in the service without touching the controller, and ease of testing and creating mocks.
 
-E é isso, galera. A intenção era fazer só mais uma postagem mostrando os dois casos de uso (Mongo e PostgreSQL), mas pra não ficar muito extenso. Vou encerrar por aqui. Depois trago o caso de uso com o postgres. Vai ser mais curto, uma vez que já passamos pelo conceito e uso do Docker e docker compose.
+And that's it, folks. The intention was to make just one more post showing both use cases (Mongo and PostgreSQL), but to not make it too long. I'll end here. Later I'll bring the use case with postgres. It will be shorter, since we've already gone through the concept and use of Docker and docker compose.
 
-Abraço!
+Cheers!

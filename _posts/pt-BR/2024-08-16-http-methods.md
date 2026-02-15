@@ -3,7 +3,8 @@ layout: post
 title: HTTP e seus métodos
 date: 2024-08-16 21:04 -0300
 categories: [Internet, HTTP]
-tags: [internet, http, basics]  
+tags: [internet, http, basics]
+lang: pt-BR
 ---
 Seja você frontend ou backend, precisa saber como funciona a web.
 

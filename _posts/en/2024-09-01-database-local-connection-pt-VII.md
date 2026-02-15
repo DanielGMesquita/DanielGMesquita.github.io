@@ -1,17 +1,18 @@
 ---
 layout: post
-title: Conectando bancos de dados locais - Parte VII
+title: Connecting local databases - Part VII
 date: 2024-09-29 23:00 -0300
-categories: [Programação, Banco de dados, Docker]
-tags: [programação, postegres, banco de dados, sql, docker, container]  
+categories: [Programming, Database, Docker]
+tags: [programming, postgres, database, sql, docker, container]
+lang: en
 ---
 
-No post anterior, falamos do docker compose com o MongoDB e uma aplicação Spring Boot. Hoje vou finalizar esta série (amém!) com a configuração do PostgreSQL.
+In the previous post, we talked about docker compose with MongoDB and a Spring Boot application. Today I'm going to finish this series (amen!) with the PostgreSQL configuration.
 
-### Configurações necessárias
-Vou pular a configuração do Dockerfile porque pouco muda, só o nome da aplicação no target.
+### Necessary configurations
+I'll skip the Dockerfile configuration because little changes, just the application name in the target.
 
-Agora vou para o `docker-compose.yml`, o próprio `pom.xml` da aplicação e o `application.properties`.
+Now I'll go to `docker-compose.yml`, the `pom.xml` of the application itself and the `application.properties`.
 
 `docker-compose.yml`:
 ```yml
@@ -47,44 +48,44 @@ volumes:
 networks:
   app-network:
 ```
-- Versão: Especifica a versão da sintaxe do Docker Compose que você está utilizando. A versão 3.9 é uma das versões mais recentes, oferecendo suporte a muitos recursos, como redes e volumes.
-- Services: Esta seção define os contêineres que serão executados. Cada contêiner é uma instância de um serviço.
+- Version: Specifies the version of the Docker Compose syntax you're using. Version 3.9 is one of the most recent versions, offering support for many features, such as networks and volumes.
+- Services: This section defines the containers that will be run. Each container is an instance of a service.
 
-Serviço postgres_application:
-- image: Especifica a imagem do Docker a ser utilizada.
+postgres_application Service:
+- image: Specifies the Docker image to be used.
 
-- ports: Mapeia as portas do contêiner para as portas da máquina host. "5432:5432" significa que a porta 5432 do contêiner (padrão do postgres) será acessível na porta 5432 do host. Isso permite que você acesse o postgres de fora do contêiner, por exemplo, utilizando um cliente postgres.
+- ports: Maps the container ports to the host machine ports. "5432:5432" means that port 5432 of the container (postgres default) will be accessible on port 5432 of the host. This allows you to access postgres from outside the container, for example, using a postgres client.
 
-- volumes: Mapeia um volume do Docker, o que permite a persistência de dados. postgres_data:/var/lib/postgresql/data indica que o volume chamado postegres_data será utilizado para armazenar os dados do MongoDB no diretório /var/lib/postgresql/data dentro do container. Isso significa que, mesmo que o container seja destruído, os dados persistem no volume.
+- volumes: Maps a Docker volume, which allows data persistence. postgres_data:/var/lib/postgresql/data indicates that the volume called postgres_data will be used to store MongoDB data in the /var/lib/postgresql/data directory inside the container. This means that even if the container is destroyed, the data persists in the volume.
 
-- environment: define as configurações de acesso ao banco de dados com usuário e senha e o nome do banco que será criado/utilizado
+- environment: defines the database access configurations with user and password and the name of the database that will be created/used
 
-Serviço da Aplicação:
-- delivery_management_api: Nome do serviço para a sua aplicação.
+Application Service:
+- delivery_management_api: Service name for your application.
 
-- build: Indica que o contêiner deve ser construído a partir do Dockerfile localizado no diretório atual (.). O Dockerfile deve estar no mesmo diretório onde o docker-compose.yml está localizado.
+- build: Indicates that the container should be built from the Dockerfile located in the current directory (.). The Dockerfile must be in the same directory where docker-compose.yml is located.
 
-- ports: Similar ao serviço do postgres, "8080:8080" mapeia a porta 8080 do contêiner para a porta 8080 do host. Isso permite que você acesse sua aplicação pela URL http://localhost:8080.
+- ports: Similar to the postgres service, "8080:8080" maps port 8080 of the container to port 8080 of the host. This allows you to access your application through the URL http://localhost:8080.
 
-- depends_on: Especifica que o serviço delivery_management_api depende do serviço postgres. Isso garante que o postgres seja iniciado antes da aplicação. No entanto, isso não garante que o postgres esteja totalmente pronto para aceitar conexões quando a aplicação iniciar.
+- depends_on: Specifies that the delivery_management_api service depends on the postgres service. This ensures that postgres is started before the application. However, this doesn't guarantee that postgres is fully ready to accept connections when the application starts.
 
-- environment: Define variáveis de ambiente para o container. Essas variáveis são passadas para o ambiente da aplicação e podem ser utilizadas para configuração.
+- environment: Defines environment variables for the container. These variables are passed to the application environment and can be used for configuration.
 
-- SPRING_DATASOURCE_URL: é utilizada para configurar a conexão da aplicação Spring com um banco de dados PostgreSQL.
+- SPRING_DATASOURCE_URL: is used to configure the Spring application connection with a PostgreSQL database.
 
-Vou explicar o item acima:
+I'll explain the item above:
  - jdbc: Java Database Connectivity (JDBC)
- é uma API do Java que permite interações com diferentes bancos de dados;
- - postgresql: o tipo de banco de dados utilizado;
- - `//`: separador que indica o início da parte que contém as informações sobre o host e a porta;
- - o restante das informações contidas na string dessa URL são: a porta utilizada pelo postgres, o nome do serviço e o nome do banco de dados.
+ is a Java API that allows interactions with different databases;
+ - postgresql: the type of database used;
+ - `//`: separator that indicates the beginning of the part that contains information about the host and port;
+ - the rest of the information contained in the string of this URL are: the port used by postgres, the service name and the database name.
 
-Volumes e redes:
-- Volumes: Define os volumes utilizados pelos serviços. Aqui, postgres_data é um volume que será usado pelo serviço postgres para persistir dados. Ao criar um volume nomeado, você pode gerenciá-lo facilmente e ele persistirá mesmo se os contêineres forem removidos.
+Volumes and networks:
+- Volumes: Defines the volumes used by the services. Here, postgres_data is a volume that will be used by the postgres service to persist data. By creating a named volume, you can easily manage it and it will persist even if the containers are removed.
 
-- Networks (opcional): Esta seção é opcional e permite que você defina redes personalizadas para conectar os serviços. Se você definir uma rede aqui, os serviços podem se comunicar entre si usando seus nomes. No seu exemplo, não há nenhuma rede definida.
+- Networks (optional): This section is optional and allows you to define custom networks to connect the services. If you define a network here, the services can communicate with each other using their names. In your example, there is no network defined.
 
-O `pom.xml` da aplicação precisa estar adequado pra proporcionar estrutura pra rodar da maneira que definimos.
+The application's `pom.xml` needs to be adequate to provide structure to run the way we defined.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -184,13 +185,13 @@ O `pom.xml` da aplicação precisa estar adequado pra proporcionar estrutura pra
 </project>
 ```
 
-Mantive basicamente a mesma estrutura do pom.xml anterior. Mas neste eu precisei mudar a dependência do banco de dados e também incluir a dependência `spring-boot-starter-data-jpa`, que inclui o Hibernate e outras utilitários da JPA (Java Persistence API), que são necessárias para persistência de dados das entidades Java no PostgreSQL. Com Hibernate e JPA, podemos interagir com o banco PostgreSQL sem precisar escrever consultas SQL manuais.
+I basically kept the same structure of the previous pom.xml. But in this one I needed to change the database dependency and also include the `spring-boot-starter-data-jpa` dependency, which includes Hibernate and other JPA (Java Persistence API) utilities, which are necessary for data persistence of Java entities in PostgreSQL. With Hibernate and JPA, we can interact with the PostgreSQL database without needing to write manual SQL queries.
 
-O Hibernate é um framework ORM (Object-Relational Mapping) que o Spring Boot usa para interagir com banco de dados. Com ele você pode trabalhar com objetos Java, enquanto ele mapeia os objetos para as tabelas do banco de dados, gerenciando as consultas SQL por trás dos panos.
+Hibernate is an ORM (Object-Relational Mapping) framework that Spring Boot uses to interact with databases. With it you can work with Java objects, while it maps the objects to database tables, managing SQL queries behind the scenes.
 
-Outra inclusão que fiz foi nos plugins do build, incluí o maven-compiler-plugin com a flag `-parameters` na configuração do compilador para poder usar alguns parâmetros nas urls das requests.
+Another inclusion I made was in the build plugins, I included the maven-compiler-plugin with the `-parameters` flag in the compiler configuration to be able to use some parameters in the request urls.
 
-Por último na parte de configuração, o `application.properties`:
+Lastly in the configuration part, the `application.properties`:
 ```properties
 # Configuração do PostgreSQL
 spring.datasource.url=jdbc:postgresql://postgres_application:5432/orderdb
@@ -208,18 +209,18 @@ spring.jpa.defer-datasource-initialization=true
 # Atualiza o esquema do banco de dados com base nas entidades sempre que a aplicação for iniciada
 spring.jpa.hibernate.ddl-auto=update
 ```
-Eu deixei comentado cada bloco pra ficar mais claro e facilitar o entendimento.
+I left each block commented to make it clearer and facilitate understanding.
 
-O arquivo `.properties` é necessário em algumas aplicações serve para configurar propriedades e comportamentos que podem ser acessados por toda a aplicação.
+The `.properties` file is necessary in some applications to configure properties and behaviors that can be accessed throughout the application.
 
-Feito isso, agora vamos ao código da aplicação e as interações com o banco.
+Once this is done, now let's go to the application code and interactions with the database.
 
-Na aplicação do MongoDB eu criei só uma entidade pra critério de entendimento. Como se tratava de SQL, e no SQL temos alguns relacionamentos entre tabelas muito úteis de aprender, eu dei uma incrementada, tendo 3 entidades: `Product`, `Order`, `Category`.
+In the MongoDB application I created just one entity for understanding purposes. Since it was SQL, and in SQL we have some relationships between tables that are very useful to learn, I added a bit more, having 3 entities: `Product`, `Order`, `Category`.
 
-É basicamente uma estrutura onde teremos produtos, que estão em determinada categoria e que podem ser incluídos em pedidos.
+It's basically a structure where we'll have products, which are in a certain category and which can be included in orders.
 
-### Entidades e suas características
-Agora vou compartilhar as entidades.
+### Entities and their characteristics
+Now I'll share the entities.
 
 `Product`:
 ```java
@@ -316,64 +317,64 @@ public class Order {
 }
 ```
 
-Você viu que é cheio de annotations nessas entidades. Aqui temos algumas anotações referentes a JPA e também ao Lombok. Como nas últimas postagens, eu mostrei todos os métodos de manipulação e leitura para uma entidade, aqui vou usar a biblioteca Lombok para reduzir código repetitivo. Vou explicar cada anotação:
+You saw that it's full of annotations in these entities. Here we have some annotations referring to JPA and also to Lombok. As in the last posts, I showed all the manipulation and reading methods for an entity, here I'll use the Lombok library to reduce repetitive code. I'll explain each annotation:
 
-- `@Entity`: Indica que a classe é uma entidade JPA (Java Persistence API) que representa uma tabela no banco de dados.
+- `@Entity`: Indicates that the class is a JPA (Java Persistence API) entity that represents a table in the database.
 
-- `@Table(name = "category")`: Especifica o nome da tabela no banco de dados que essa entidade representa.
+- `@Table(name = "category")`: Specifies the name of the table in the database that this entity represents.
 
-- `@Data`: Uma anotação do Lombok que gera automaticamente métodos getter, setter, toString, equals, e hashCode para a classe.
+- `@Data`: A Lombok annotation that automatically generates getter, setter, toString, equals, and hashCode methods for the class.
 
-- `@Builder`: Permite o uso do padrão de projeto Builder para criar instâncias da entidade de maneira mais legível.
+- `@Builder`: Allows use of the Builder design pattern to create entity instances in a more readable way.
 
-- `@ToString(exclude = "products")`: Gera o método toString, mas exclui o atributo products para evitar um loop infinito devido ao relacionamento bidirecional.
+- `@ToString(exclude = "products")`: Generates the toString method, but excludes the products attribute to avoid an infinite loop due to the bidirectional relationship.
 
-- `@EqualsAndHashCode`(exclude = "products"): Gera os métodos equals e hashCode, mas exclui o atributo products para evitar problemas de comparação circular.
+- `@EqualsAndHashCode`(exclude = "products"): Generates equals and hashCode methods, but excludes the products attribute to avoid circular comparison problems.
 
-- `@NoArgsConstructor`: Gera um construtor sem argumentos. Necessário para o JPA criar instâncias da classe.
+- `@NoArgsConstructor`: Generates a constructor with no arguments. Necessary for JPA to create class instances.
 
-- `@AllArgsConstructor`: Gera um construtor que aceita todos os campos da classe como parâmetros.
+- `@AllArgsConstructor`: Generates a constructor that accepts all class fields as parameters.
 
-- `@Id`: Indica que o campo id é a chave primária da entidade. Diferente do MongoDB, este compo não pode ser uma String.
+- `@Id`: Indicates that the id field is the entity's primary key. Unlike MongoDB, this field cannot be a String.
 
-- `@GeneratedValue(strategy = GenerationType.IDENTITY)`: Especifica que o valor da chave primária será gerado pelo banco de dados (normalmente em uma coluna de auto-incremento).
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)`: Specifies that the primary key value will be generated by the database (normally in an auto-increment column).
 
-- `@Column(name = "category_id")`: Mapeia o campo id para a coluna category_id na tabela. Vale também para as outras entidades.
+- `@Column(name = "category_id")`: Maps the id field to the category_id column in the table. Also applies to other entities.
 
-- `@Column(name = "category_name", nullable = false)`: Mapeia o campo categoryName para a coluna category_name, indicando que não pode ser nulo.
+- `@Column(name = "category_name", nullable = false)`: Maps the categoryName field to the category_name column, indicating that it cannot be null.
 
-- `@OneToMany(mappedBy = "category")`: Define um relacionamento um-para-muitos com a entidade Product. O atributo mappedBy indica que o lado "muitos" (ou seja, Product) possui a chave estrangeira.
+- `@OneToMany(mappedBy = "category")`: Defines a one-to-many relationship with the Product entity. The mappedBy attribute indicates that the "many" side (i.e., Product) has the foreign key.
 
-- `@ManyToMany`: Define um relacionamento muitos-para-muitos com outra entidade. No caso desta aplicação, significa que um pedido pode conter muitos produtos e um produto pode estar em muitas ordens.
+- `@ManyToMany`: Defines a many-to-many relationship with another entity. In the case of this application, it means that an order can contain many products and a product can be in many orders.
 
-- `@ManyToOne`: Define um relacionamento muitos-para-um com outra entidade. Nosso caso, significa que muitos produtos podem pertencer a uma única categoria.
+- `@ManyToOne`: Defines a many-to-one relationship with another entity. In our case, it means that many products can belong to a single category.
 
-- `@JsonManagedReference`: Utilizada em relacionamentos bidirecionais, indica que este é o lado "gerenciado" da referência. No momento da serialização JSON, o lado "gerenciado" é incluído, enquanto o lado "back" (referido na outra entidade) será ignorado, neste caso, na entidade Product.
+- `@JsonManagedReference`: Used in bidirectional relationships, indicates that this is the "managed" side of the reference. During JSON serialization, the "managed" side is included, while the "back" side (referenced in the other entity) will be ignored, in this case, in the Product entity.
 
-- `@JsonBackReference`: Usada em um relacionamento bidirecional, indica que este é o lado "back" da referência. Durante a serialização JSON, o lado "back" será ignorado, evitando loops infinitos.
+- `@JsonBackReference`: Used in a bidirectional relationship, indicates that this is the "back" side of the reference. During JSON serialization, the "back" side will be ignored, avoiding infinite loops.
 
-- `@JoinColumn(name = "category_id", nullable = false)`: Especifica a coluna que armazena a chave estrangeira (no caso, category_id é a chave estrangeira referente a tabela de produtos).
+- `@JoinColumn(name = "category_id", nullable = false)`: Specifies the column that stores the foreign key (in this case, category_id is the foreign key referring to the products table).
 
-- `@JoinTable(...)`: Especifica a tabela de junção que relaciona os produtos aos pedidos. O joinColumns define a chave estrangeira da entidade Product, enquanto inverseJoinColumns define a chave estrangeira da entidade Order.
+- `@JoinTable(...)`: Specifies the junction table that relates products to orders. The joinColumns defines the foreign key of the Product entity, while inverseJoinColumns defines the foreign key of the Order entity.
 
-- `@JsonIgnore`: Indica que este campo não deve ser incluído na serialização JSON. É útil para evitar a inclusão de dados que não são necessários ou podem causar loops infinitos na serialização.
+- `@JsonIgnore`: Indicates that this field should not be included in JSON serialization. It's useful to avoid including data that is not necessary or can cause infinite loops in serialization.
 
-#### Resumo dos Relacionamentos
+#### Relationships Summary
 
-ORM (Object Relational Mapper) é uma técnica de mapeamento objeto-relacional que aproxima o desenvolvimento de aplicações orientadas a objetos do paradigma de bancos de dados relacionais (SQL). Geralmente você pode ver esses relacionamentos representados por um diagrama utilizando UML como o item abaixo:
+ORM (Object Relational Mapper) is an object-relational mapping technique that brings object-oriented application development closer to the relational database paradigm (SQL). Generally you can see these relationships represented by a diagram using UML like the item below:
 
 ![alt text](assets/img/posts/uml.png)
 
-- Category para Product: Relacionamento um-para-muitos. Uma categoria pode ter muitos produtos, mas um produto só pode pertencer a uma categoria.
+- Category to Product: One-to-many relationship. A category can have many products, but a product can only belong to one category.
 
-- Order para Product: Relacionamento muitos-para-muitos. Uma ordem pode conter muitos produtos, e um produto pode ser parte de muitas ordens.
+- Order to Product: Many-to-many relationship. An order can contain many products, and a product can be part of many orders.
 
-- Product para Category: Relacionamento muitos-para-um. Muitos produtos podem pertencer a uma única categoria.
+- Product to Category: Many-to-one relationship. Many products can belong to a single category.
 
-- Product para Order: Relacionamento muitos-para-muitos. Muitos produtos podem estar associados a muitas ordens.
+- Product to Order: Many-to-many relationship. Many products can be associated with many orders.
 
 ### Repository
-Não temos muitas diferenças consideráveis nos repositories desta aplicação em relação a do Mongo. A principal diferenção é que ao invés de extender `MongoRepository`, vai extender `JpaRepository`, conforme exemplo abaixo:
+We don't have many considerable differences in the repositories of this application compared to Mongo. The main difference is that instead of extending `MongoRepository`, it will extend `JpaRepository`, as in the example below:
 ```java
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
@@ -381,10 +382,10 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 }
 ```
 
-No repository acima, referente a entidade Category, estou extendendo JpaRepository para Category e Long (referente a chave primária do item). Além disso, estou inserido um método personalizado para buscar a categoria pelo nome. Os demais repositories seguem a mesma estrutura.
+In the repository above, referring to the Category entity, I'm extending JpaRepository for Category and Long (referring to the item's primary key). Additionally, I'm inserting a custom method to search for the category by name. The other repositories follow the same structure.
 
 ### Service
-O service também não tem muita mudança relevante em relação ao caso utilizado na aplicação usando NoSQL porque a regra de negócios não mudou.
+The service also doesn't have much relevant change compared to the case used in the application using NoSQL because the business rule hasn't changed.
 ```java
 import java.util.List;
 import java.util.Optional;
@@ -418,10 +419,10 @@ public class CategoryService {
   }
 }
 ```
-Um ponto que vale ressaltar é que utilizamos o Optional para evitar NullPointerException caso o item não conste no banco de dados.
+A point worth mentioning is that we use Optional to avoid NullPointerException if the item is not in the database.
 
 ### Controller
-Nesta parte, temos algumas diferenças em relação a aplicação NoSQL apenas para podermos explorar melhor o relacionamento entre as entidades. Abaixo vou mostrar como ficou cada um.
+In this part, we have some differences compared to the NoSQL application just so we can better explore the relationship between entities. Below I'll show how each one turned out.
 
 `ProductController`
 ```java
@@ -680,21 +681,21 @@ public class OrderController {
   }
 }
 ```
-As anotações referentes ao Spring Boot para o controlador se mantém, se tiver dúvidas, consulte na [postagem anterior](https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/). O principal ponto é que aqui eu incluí DTOs (data transfer objects) para otimizar as requisições, evitando que seja necessário incluir todas as informações de todos os objetos que as entidades formam. Além disso, esses DTOs facilitam construir o relacionamento entre as entidades utilizando apenas os dados necessários.
+The annotations referring to Spring Boot for the controller remain, if you have questions, check the [previous post](https://danielmesquita.dev.br/posts/database-local-connection-pt-VI/). The main point is that here I included DTOs (data transfer objects) to optimize requests, avoiding the need to include all information from all objects that entities form. Additionally, these DTOs facilitate building the relationship between entities using only the necessary data.
 
-Uma boa prática de programação neste caso seria remover as manipulações de dados, principalmente a de outras entidades, dos controllers e mandar para os services. As classes de service que devem conter as regras de negócio, então se uma categoria vai incluir produtos ou não, como as interações entre os dados de uma entidade e outra serão feitas, devem ir pra lá. Deixei aqui mais pra mostrar a ideia de como funciona.
+A good programming practice in this case would be to remove data manipulations, especially of other entities, from controllers and send to services. The service classes should contain business rules, so if a category will include products or not, how the interactions between data from one entity and another will be done, should go there. I left it here more to show the idea of how it works.
 
-No repositório do GitHub desta aplicação, já vou deixar como eu refatoraria esse código que mostrei aqui.
+In the GitHub repository of this application, I'll leave it as I would refactor this code I showed here.
 
-Depois disso é só mandar um `docker-compose down -v` pra derrubar o container e apagar todos os dados persistidos no banco de dados pra começar do zero (caso não queira apagar os dados, só remover o `-v` do comando), depois `mvn clean install` pra instalar tudo que precisa e manda um `docker-compose up --build` e pode brincar com sua aplicação fazendo requisições HTTP via linha de comando ou usando alguma ferramenta feito o postman.
+After that just run a `docker-compose down -v` to bring down the container and delete all data persisted in the database to start from scratch (if you don't want to delete the data, just remove the `-v` from the command), then `mvn clean install` to install everything you need and run a `docker-compose up --build` and you can play with your application making HTTP requests via command line or using a tool like postman.
 
-É isso, essa aqui foi uma postagem mais densa porque tem alguns conceitos importantes de JPA e SQL que precisavam ser refinados e eu não ia fazer uma nova pra quebrar a linha de raciocínio. Vou deixar aqui embaixo os links dos repositórios no GitHub das aplicações que construí nessa série pra quem tiver interesse em olhar o código, se quiser clonar, melhorar, abrir issue...
+That's it, this one was a denser post because there are some important concepts of JPA and SQL that needed to be refined and I wasn't going to make a new one to break the train of thought. I'll leave here below the links to the GitHub repositories of the applications I built in this series for those interested in looking at the code, if you want to clone, improve, open an issue...
 
-[Aplicação Java com MongoDB rodando local](https://github.com/DanielGMesquita/delivery-manager-nosql)
-[Aplicação Java com PostgreSQL rodando local](https://github.com/DanielGMesquita/delivery-manager)
-[Aplicação Spring Boot com MongoDB rodando via docker compose](https://github.com/DanielGMesquita/delivery-manager-nosql-docker)
-[Aplicação Spring Boot com PostgreSQL rodando via docker compose](https://github.com/DanielGMesquita/delivery_manager_sql_docker)
+[Java application with MongoDB running locally](https://github.com/DanielGMesquita/delivery-manager-nosql)
+[Java application with PostgreSQL running locally](https://github.com/DanielGMesquita/delivery-manager)
+[Spring Boot application with MongoDB running via docker compose](https://github.com/DanielGMesquita/delivery-manager-nosql-docker)
+[Spring Boot application with PostgreSQL running via docker compose](https://github.com/DanielGMesquita/delivery_manager_sql_docker)
 
-Espero que quem leia essas postagens (se alguém ler) faça um bom proveito. Pra mim foi muito bom para aprender, testar e praticar algumas coisas.
+I hope whoever reads these posts (if anyone reads) makes good use of it. For me it was very good to learn, test and practice some things.
 
-Abraço!
+Cheers!

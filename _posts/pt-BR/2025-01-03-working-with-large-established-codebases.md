@@ -3,7 +3,8 @@ layout: post
 title: O que eu aprendi em 6 meses trabalhando com código legado
 date: 2025-01-03 07:30 -0300
 categories: [Programação]
-tags: [programação, algoritmos, código legado]  
+tags: [programação, algoritmos, código legado]
+lang: pt-BR
 ---
 Como alguns sabem, em Agosto de 2024 eu comecei a trabalhar para uma empresa da Europa. Além da mudança de empresas e culturas, uma outra coisa que mudou muito na minha dinâmica foi o tipo de programa que eu trabalho.
 

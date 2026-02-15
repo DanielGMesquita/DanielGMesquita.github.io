@@ -3,7 +3,8 @@ layout: post
 title: Conectando bancos de dados locais - Parte I
 date: 2024-09-01 08:10 -0300
 categories: [Programação, Banco de dados]
-tags: [programação, postgres, banco de dados, sql]  
+tags: [programação, postgres, banco de dados, sql]
+lang: pt-BR
 ---
 Uma coisa que todo programador ou estudante back-end precisa ter para fazer qualquer coisa útil, é um banco de dados rodando. Afinal de contas, tudo é CRUD (polêmico) e não se faz um sem um banco de dados.
 

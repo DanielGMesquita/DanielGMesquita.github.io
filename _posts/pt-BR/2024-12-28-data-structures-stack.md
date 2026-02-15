@@ -3,7 +3,8 @@ layout: post
 title: Estrutura de dados - Pilha
 date: 2024-12-28 09:31 -0300
 categories: [Programação, Estrutura de dados]
-tags: [programação, algoritmos, estrutura de dados, pilha]  
+tags: [programação, algoritmos, estrutura de dados, pilha]
+lang: pt-BR
 ---
 Depois de passar sobre **[introdução a estrutura de dados](https://danielmesquita.dev.br/posts/data-structures-intro/)**, agora vou falar sobre pilha.
 

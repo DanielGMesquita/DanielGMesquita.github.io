@@ -1,17 +1,18 @@
----
+````---
 layout: post
-title: Faça seu próprio código
+title: Write your own code
 date: 2024-08-26 00:10 -0300
-categories: [Programação, Estudos]
-tags: [programação, código, estudos, node, javascript]  
+categories: [Programming, Studies]
+tags: [programming, code, studies, node, javascript]
+lang: en
 ---
-No começo dos meus estudos em programação, eu fui um dos vários casos que acompanhou cursos onde o instrutor vai escrevendo o código e ensinando as coisas enquanto o aluno vai replicando.
+At the beginning of my programming studies, I was one of several cases who followed courses where the instructor writes the code and teaches things while the student replicates.
 
-Eu acho que esse tipo de metodologia tem seu valor, mas depende muito do aluno.
+I think this type of methodology has its value, but it depends a lot on the student.
 
-Passei quase um ano sem acessar nenhum material e estudar nesse formato. Atualmente estou em uma disciplina na faculdade que o projeto final consiste em uma aplicação de gestão de consultas médicas, envolvendo entidades médico, paciente, consulta e receita. Nada muito complexo. Back-end em Node. Nada muito complexo.
+I spent almost a year without accessing any material and studying in this format. I'm currently in a college subject where the final project consists of a medical appointment management application, involving doctor, patient, appointment and prescription entities. Nothing very complex. Back-end in Node. Nothing very complex.
 
-E por não parecer complexo, o aluno pode cair na cilada de sair só copiando código do professor, sem ir colocando sua marca ali. Depois de tanto tempo sem acompanhar um material nesse formato, hoje eu me sinto extremamente incomodado em ficar assistindo alguém escrever código. Vou dar um exemplo pra explicar o que eu tenho feito. O print abaixo é do código original da disciplina, da entidade Appointment:
+And because it doesn't seem complex, the student can fall into the trap of just copying the teacher's code, without putting their mark there. After so long without following material in this format, today I feel extremely uncomfortable watching someone write code. I'll give an example to explain what I've been doing. The print below is from the original code of the subject, from the Appointment entity:
 
 ```javascript
 import { mongoose } from "mongoose";
@@ -30,7 +31,7 @@ const appointmentSchema = new Schema ({
         required: [true, 'DoctorId is required.'],
         validate: {
             validator: function (v){
-                const id = new mongoose.Types.ObjectId(v); // convertendo uma string em objeto ID para ser encontrado no banco
+                const id = new mongoose.Types.ObjectId(v); // converting a string to an ID object to be found in the database
                 return Doctor.exists({_id: id});
             },
             message: props =>
@@ -42,7 +43,7 @@ const appointmentSchema = new Schema ({
         required: [true, 'PacientId is required.'],
         validate: {
             validator: function (v){
-                const id = new mongoose.Types.ObjectId(v); // convertendo uma string em objeto ID para ser encontrado no banco
+                const id = new mongoose.Types.ObjectId(v); // converting a string to an ID object to be found in the database
                 return Pacient.exists({_id: id});
             },
             message: props =>
@@ -60,7 +61,7 @@ const appointment = mongoose.model('Appointment', appointmentSchema);
 export default appointment;
 ```
 
-Você pode notar que existe uma repetição de código para realizar a validação de campos utilizam a mesma lógica. Eu sou muito crítico com código repetido, então criei um utils para validações e limpei um pouco a entidade:
+You can notice that there is code repetition to perform validation of fields using the same logic. I'm very critical of repeated code, so I created a utils for validations and cleaned up the entity a bit:
 
 ```javascript
 import mongoose from "mongoose";
@@ -106,7 +107,7 @@ const appointment = mongoose.model('Appointment', appointmentSchema);
 export default appointment;
 ```
 
-Outra mudança que eu tive que fazer para melhorar a qualidade do código foi nos repositories e controllers. Inicialmente o repository para incluir um novo item no banco, precisava receber um objeto com todos os campos daquela entidade para fazer a lógica de inclusão. Isso não é o errado, o que fica estranho é ter isso declarado diretamente em todo o código, como abaixo:
+Another change I had to make to improve code quality was in the repositories and controllers. Initially the repository to include a new item in the database needed to receive an object with all the fields of that entity to do the inclusion logic. This is not wrong, what's strange is having this declared directly in all the code, as below:
 
 ```javascript
 import Doctor from "../models/Doctor.js"
@@ -174,7 +175,7 @@ const doctorRepository = {
 export default doctorRepository;
 ```
 
-Eu também "escondi" toda a lógica de construção do objeto que será enviado para o banco em uma função separada. Assim o repository fica mais "limpo" e não precisa ter a mesma lógica de construção de objeto para todos os campos.
+I also "hid" all the logic of building the object that will be sent to the database in a separate function. This way the repository is "cleaner" and doesn't need to have the same object building logic for all fields.
 
 ```javascript
 import Doctor from "../models/Doctor.js"
@@ -238,7 +239,7 @@ const doctorRepository = {
 export default doctorRepository;
 ```
 
-Uma outra edição relevante que fiz foi nos controllers. Todos utilizam o router do express para fazer as chamadas. Todos os controllers tem basicamente as mesmas rotas apra cada entidade. O original não incluía casos para entidades não encontradas no banco, assim como todos as rotas utilizavam um blco try/catch para capturar e passar os erros adiante:
+Another relevant edit I made was in the controllers. All use express router to make calls. All controllers basically have the same routes for each entity. The original didn't include cases for entities not found in the database, just as all routes used a try/catch block to capture and pass errors forward:
 
 ```javascript
 import express from "express";
@@ -321,18 +322,18 @@ router.put('/reschedule/:id', async(req, res) => {
 export default router;
 ```
 
-Então criei um asyncHandler para esse cara:
+So I created an asyncHandler for this guy:
 
 ```javascript
 export const asyncHandler = fn => (req, res, next) =>
     Promise.resolve(fn(req, res, next)).catch(next);
 ```
 
-O que eu decidi fazer foi utilizar um middleware de utilitário do express para lidar com funções assíncronas de maneira mais elegante, automatizando os tratamentos das rotas:
-1 - O "fn" é uma função assíncrona que eu desejo executar, com a assinatura (req, res, next) que pode retornar uma Promise;
-2 - O asyncHandler retorna uma nova função rque recebe os mesmos parâmetros que "fn";
-3 - Promise.resolve() é utilizado para que garantir que o retorno de "fn" seja tratado como uma promessa, mesmo se "fn" não retornar uma promise explícita (como uma função síncrona, por exemplo);
-4 - No caso do ".catch(next)" se a promessa retornada por "fn" for rejeitada (ou seja, se um erro ocorrer dentro de "fn"), o .catch(next) captura esse erro e o passa para o middleware de tratamento de erros do Express (chamando a função next com o erro como argumento).
+What I decided to do was use an express utility middleware to handle asynchronous functions more elegantly, automating route handling:
+1 - The "fn" is an asynchronous function that I want to execute, with the signature (req, res, next) that can return a Promise;
+2 - The asyncHandler returns a new function that receives the same parameters as "fn";
+3 - Promise.resolve() is used to ensure that the return of "fn" is treated as a promise, even if "fn" doesn't return an explicit promise (like a synchronous function, for example);
+4 - In the case of ".catch(next)" if the promise returned by "fn" is rejected (that is, if an error occurs inside "fn"), the .catch(next) captures that error and passes it to Express's error handling middleware (calling the next function with the error as an argument).
 
 ```javascript
 import express from "express";
@@ -406,14 +407,15 @@ router.use(errorHandler);
 export default router;
 ```
 
-Neste caso o asyncHandler simplifica o código, retirando a necessidade de vários blocos try/catch e gerencia os erros de maneira que permita que o Express trate-os de maneira centralizada.
+In this case the asyncHandler simplifies the code, removing the need for several try/catch blocks and manages errors in a way that allows Express to handle them centrally.
 
-Hoje com algum tempo de atuação no mercado, eu já tento sempre implantar melhorias que aumentem a qualidade de código, facilite sua manutenção e torne escalável e fácil de entender, mesmo em projetos de estudo. E eu não faço isso depois de "entregar a atividade". Eu faço durante a construção do código, assim que pego a ideia do que precisa ser feito, analiso o que pode melhorar e aplico.
+Today with some time working in the market, I always try to implement improvements that increase code quality, facilitate its maintenance and make it scalable and easy to understand, even in study projects. And I don't do this after "delivering the activity". I do it during the code construction, as soon as I get the idea of what needs to be done, I analyze what can be improved and apply it.
 
-O mesmo vale pra quem ainda não tem experiência profissional, mesmo nos estudos, a pessoa começa a desenvolver algumas habilidades que ajudam a sair do goHorseX. É muito importante para o aprendizado ter autonomia e iniciativa ao desenvolver projetos de estudos porque você NUNCA vai aprender aquilo se ficar só copiando o que o instrutor está codando.
+The same goes for those who still don't have professional experience, even in studies, the person starts to develop some skills that help to get out of goHorseX. It's very important for learning to have autonomy and initiative when developing study projects because you will NEVER learn that if you just keep copying what the instructor is coding.
 
-Tente, aplique melhorias, crie outras features, formule hipóteses, tenha visão crítica para buscar melhorias, quebre sua aplicação, leia os logs e o console, vá tratando com a vida real. Na vida real, um código que já sai funcionando bonitinho de cara com tudo bem entregue é coisa rara. E se você se deparar com algum assim, sugiro desconfiar.
+Try, apply improvements, create other features, formulate hypotheses, have a critical view to seek improvements, break your application, read the logs and the console, deal with real life. In real life, code that works nicely right away with everything well delivered is rare. And if you come across one like that, I suggest you be suspicious.
 
-Você só vai desenvolver novas habilidades se você se expor a novos problemas a serem resolvidos. E copiar código de alguém definitivamente não é um problema.
+You'll only develop new skills if you expose yourself to new problems to be solved. And copying someone's code is definitely not a problem.
 
-Abraço!
+Cheers!
+````

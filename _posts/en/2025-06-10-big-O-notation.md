@@ -3,7 +3,8 @@ layout: post
 title: Big O Notation - what is it, where it lives, what it eats
 date: 2025-06-10 07:30 -0300
 categories: [Programação]
-tags: [programação, algorítimos, performance]  
+tags: [programação, algorítimos, performance]
+lang: en
 ---
 
 I had an interview today, and after almost two hours of a good conversation about some key concepts of algorthims and good practices of coding, there is some topics that I would like to share with you. Maybe you're a skilled software engineer, this may be sound as obvious to you but my main public is entry-level engineers and students.

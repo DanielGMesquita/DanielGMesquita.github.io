@@ -3,7 +3,8 @@ layout: post
 title: Conectando bancos de dados locais - Parte III
 date: 2024-09-04 23:00 -0300
 categories: [Programação, Banco de dados]
-tags: [programação, mongodb, banco de dados, nosql]  
+tags: [programação, mongodb, banco de dados, nosql]
+lang: pt-BR
 ---
 Já falamos sobre como configurar localmente o banco sql postgres e como conectar uma aplicação Java a ele. Caso não tenha visto: [primeira parte](https://danielmesquita.dev.br/posts/database-local-connection-pt-I/) e [segunda parte](https://danielmesquita.dev.br/posts/database-local-connection-pt-II/), se for do seu interesse.
 

@@ -1,22 +1,23 @@
----
+````---
 layout: post
-title: Conectando bancos de dados locais - Parte II
+title: Connecting local databases - Part II
 date: 2024-09-02 06:10 -0300
-categories: [Programação, Banco de dados]
-tags: [programação, postgres, banco de dados, sql]  
+categories: [Programming, Database]
+tags: [programming, postgres, database, sql]
+lang: en
 ---
-Agora que já foi possível conectar o banco postegres usando o JDBC*, podemos seguir em frente e criar os métodos que vão interagir com o banco de dados. Caso não tenha visto a [primeira parte](https://danielmesquita.dev.br/posts/database-local-connection-pt-I/), é fundamental que veja.
+Now that it's been possible to connect the postgres database using JDBC*, we can move forward and create the methods that will interact with the database. If you haven't seen the [first part](https://danielmesquita.dev.br/posts/database-local-connection-pt-I/), it's essential that you do.
 
-Primeiro, precisamos alimentar as tabelas com algum dado. Isso não vai ser feito via mágica, vamos usar queries SQL mesmo. Na parte I, criamos a tabela product. Agora vamos criar uma tabela order e seu alter incluir dados nela. Indo pelo pgAdmin, utilizando o Queries Tool, podemos incluir algo do tipo:
+First, we need to populate the tables with some data. This won't be done by magic, we'll use SQL queries. In part I, we created the product table. Now let's create an order table and then include data in it. Going through pgAdmin, using the Queries Tool, we can include something like:
 ```sql
 INSERT INTO tb_product (name, price, image_Uri, description) VALUES 
-('Smartphone Samsung Galaxy', 1200.0, 'https://teste.com/images/1.png', 'Smartphone samsung com SO Android e acesso a 5G'),
+('Smartphone Samsung Galaxy', 1200.0, 'https://teste.com/images/1.png', 'Samsung smartphone with Android OS and 5G access'),
 ('Notebook Lenovo', 2500.0, 'https://teste.com/images/2.png', 'Notebook 16GB RAM, Intel i5'),
-('Earbuds Xiaomi', 400.0, 'https://teste.com/images/3.png', 'Fone de ouvido intra auricular');
+('Earbuds Xiaomi', 400.0, 'https://teste.com/images/3.png', 'In-ear headphone');
 ```
-Feito isso, agora temos uma tabela com dados para podermos explorar.
+Done, now we have a table with data that we can explore.
 
-Voltando agora para nossa aplicação, temos que criar a entidade que vai se relacionar com a tabela que criamos:
+Returning now to our application, we have to create the entity that will relate to the table we created:
 
 ```java
 package org.danielmesquita.entities;
@@ -91,7 +92,7 @@ public class Product {
 }
 ```
 
-Com a entidade criada e o banco populado e conectado, agora dá pra brincar com os dados. Você pode passar as queries SQL que vamos utilizar todas para uma classe a parte para critérios de organização:
+With the entity created and the database populated and connected, now we can play with the data. You can pass all the SQL queries we'll use to a separate class for organization criteria:
 
 ```java
 package org.danielmesquita.constants;
@@ -106,7 +107,7 @@ public class QueriesSQL {
 }
 ```
 
-E por fim, temos os métodos que irão interagir com o nosso banco de dados:
+And finally, we have the methods that will interact with our database:
 ```java
   private static Product instantiateProduct(ResultSet resultSet) throws SQLException {
     Product product = new Product();
@@ -178,7 +179,7 @@ E por fim, temos os métodos que irão interagir com o nosso banco de dados:
   }
 ```
 
-E agora no método main você pode testar o seu banco de dados postgres. Se quiser melhorar, pode separar os métodos nas suas responsabilidades em packages e classes específicas para aprimorar.
+And now in the main method you can test your postgres database. If you want to improve, you can separate the methods into their responsibilities in specific packages and classes to refine.
 ```java
 package org.danielmesquita;
 
@@ -212,7 +213,7 @@ public class Application {
     }
 
     Product productToUpdate = new Product();
-    productToUpdate.setId(1L);  // Supondo que você quer atualizar o produto com ID 1
+    productToUpdate.setId(1L);  // Assuming you want to update the product with ID 1
     productToUpdate.setName("Samsung Galaxy S21");
     productToUpdate.setPrice(2000.0);
     productToUpdate.setDescription("The best Android phone ever");
@@ -308,36 +309,37 @@ public class Application {
 }
 ```
 
-Esse é um exemplo de um CRUD simples utilizando um banco SQL configurado utilizando postgres e o pgAdmin para executar as queries necessárias e visualizar as tabelas. Utilizando o Spring seria muito mais simples devido as funcionalidades que o framework disponibiliza, mas não é o foco deste conteúdo. Aqui é mais pra mostrar como utilizar os bancos no ambiente local.
+This is an example of a simple CRUD using a configured SQL database using postgres and pgAdmin to execute the necessary queries and view the tables. Using Spring would be much simpler due to the features the framework provides, but that's not the focus of this content. Here it's more to show how to use the databases in the local environment.
 
-Em breve eu vou trazer aqui a configuração do MongoDB que é um banco NoSQL e como utilizar o Java para manipular os dados.
+Soon I'll bring here the MongoDB configuration which is a NoSQL database and how to use Java to manipulate the data.
 
-Abraços!
+Cheers!
 
 ___
 
-*JDBC (Java Database Connectivity) é uma API (Application Programming Interface) do Java que permite que aplicativos Java se conectem a bancos de dados, enviem consultas SQL e manipulem dados armazenados neles. Basicamente, o JDBC atua como uma ponte entre o código Java e o banco de dados, permitindo que você execute operações como inserir, atualizar, excluir e consultar dados.
+*JDBC (Java Database Connectivity) is a Java API (Application Programming Interface) that allows Java applications to connect to databases, send SQL queries and manipulate data stored in them. Basically, JDBC acts as a bridge between Java code and the database, allowing you to execute operations such as inserting, updating, deleting and querying data.
 
-Componentes Principais do JDBC
+Main JDBC Components
 
-    Driver JDBC: Um driver JDBC é uma implementação específica da API JDBC para um banco de dados particular (como PostgreSQL, MySQL, Oracle, etc.). Ele traduz as chamadas JDBC em comandos específicos do banco de dados.
+    JDBC Driver: A JDBC driver is a specific implementation of the JDBC API for a particular database (such as PostgreSQL, MySQL, Oracle, etc.). It translates JDBC calls into specific database commands.
 
-    Connection: Representa uma conexão com um banco de dados. Você usa o Connection para interagir com o banco, abrir transações e criar Statements ou PreparedStatements.
+    Connection: Represents a connection to a database. You use the Connection to interact with the database, open transactions and create Statements or PreparedStatements.
 
-    Statement e PreparedStatement: Objetos usados para executar consultas SQL. Statement é usado para consultas simples, enquanto PreparedStatement permite consultas parametrizadas, o que é mais seguro contra injeções de SQL.
+    Statement and PreparedStatement: Objects used to execute SQL queries. Statement is used for simple queries, while PreparedStatement allows parameterized queries, which is safer against SQL injections.
 
-    ResultSet: Um conjunto de resultados de uma consulta SQL, retornando dados do banco de dados em forma de tabela. O ResultSet é iterado para acessar os dados linha por linha.
+    ResultSet: A result set from an SQL query, returning data from the database in table form. The ResultSet is iterated to access the data row by row.
 
-    SQLException: Exceções lançadas quando ocorrem erros durante a interação com o banco de dados.
+    SQLException: Exceptions thrown when errors occur during interaction with the database.
 
-Como o JDBC Funciona
+How JDBC Works
 
-    Carregar o Driver JDBC: Carregar a classe do driver para o banco de dados que você deseja usar.
+    Load the JDBC Driver: Load the driver class for the database you want to use.
 
-    Estabelecer uma Conexão: Usar o DriverManager para estabelecer uma conexão com o banco de dados, fornecendo a URL do banco, nome de usuário e senha.
+    Establish a Connection: Use DriverManager to establish a connection to the database, providing the database URL, username and password.
 
-    Executar Consultas: Usar objetos Statement ou PreparedStatement para executar instruções SQL no banco de dados.
+    Execute Queries: Use Statement or PreparedStatement objects to execute SQL statements on the database.
 
-    Processar os Resultados: Se a consulta retornar dados, você processa os resultados usando o ResultSet.
+    Process Results: If the query returns data, you process the results using ResultSet.
 
-    Fechar a Conexão: Após completar as operações, a conexão com o banco de dados deve ser fechada para liberar recursos.
+    Close the Connection: After completing operations, the database connection must be closed to free resources.
+````

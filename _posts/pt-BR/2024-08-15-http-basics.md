@@ -3,7 +3,8 @@ layout: post
 title: HTTP basicão
 date: 2024-08-15 21:04 -0300
 categories: [Internet, HTTP]
-tags: [internet, http, basics]  
+tags: [internet, http, basics]
+lang: pt-BR
 ---
 Eu sei que você que adora fazer projeto dizendo que tá consumindo API sem nem saber como aquilo funciona.
 

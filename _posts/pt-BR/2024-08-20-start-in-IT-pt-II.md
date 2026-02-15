@@ -3,7 +3,8 @@ layout: post
 title: Minhas impressões sobre ingressar na área de TI - Parte II
 date: 2024-08-20 02:10 -0300
 categories: [Carreira, Programação]
-tags: [carreira, programação, juninho]  
+tags: [carreira, programação, juninho]
+lang: pt-BR
 ---
 Eu não sou especialista em nada, tudo o que eu falo é baseado na minha experiência, não quero ser influencer nem monetizar isso. Vou tentar condensar um pouco o meu caminho pra conseguir iniciar em TI sem me ater muito a sacrifícios pessoais, porque isso cada um vai viver os seus.
 

@@ -3,7 +3,8 @@ layout: post
 title: Conectando bancos de dados locais - Parte IV
 date: 2024-09-05 17:00 -0300
 categories: [Programação, Banco de dados]
-tags: [programação, mongodb, banco de dados, nosql]  
+tags: [programação, mongodb, banco de dados, nosql]
+lang: pt-BR
 ---
 
 Hoje vou finalizar o conteúdo sobre MongoDB com Java rodando local. A parte grossa de instalação e configuração já foi. Agora é só configurar as entidades, criar os métodos necessários e botar pra rodar. Então sem enrolação demais, vamos para o código.
